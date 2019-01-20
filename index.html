@@ -15,28 +15,17 @@
       /* *{
  outline: 1px solid red;
 } */
-      
-      html,body
-      {
-      width: 100%;
-      height: 100%;
-      margin: 0px;
-      padding: 0px;
-      overflow-x: hidden; 
+      button, input {
+        outline: none;
+        border: none;
       }
-      /* html, body {
-        margin: none;
-        padding: none;
-        z-index: 0;
-        max-width: 100%;
-        height: auto;
-        overflow-x: hidden;
+      html,body {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden; 
       }
-      * {
-        margin: 0;
-        padding: 0;
-      } */
-
       body * {
         /* max-width: 100; */
         font-family: "Helvetica Neue";
@@ -84,6 +73,7 @@
         #col-4, #col-3, #col-2 {
           grid-template-columns: repeat(2, 1fr);
           padding: 0 4%;
+          justify-items: center;
         }
       }
       /* Desktop */
@@ -91,6 +81,7 @@
         #col-4 {
           grid-template-columns: repeat(4, 1fr);
           padding: 0 4%;
+          justify-items: center;
         }
         #col-3 {
           grid-template-columns: repeat(3, 1fr);
@@ -231,9 +222,6 @@
         grid-row-gap: 10px;
         padding-bottom: 15%;
       }
-      /* #intro #col-3 {
-        padding-bottom: 5%;
-      } */
       .item-block {
         display: flex;
         flex-direction: column;
@@ -366,9 +354,6 @@
 
       /* Tablet to Small Laptop */
       @media only screen and (min-width: 768px) and (max-width: 1023px) {
-        /* .feature-container {
-          padding-bottom: 5%;
-        } */
         #about {
           grid-template-columns: repeat(2, 1fr);
           padding: 10% 4%;
@@ -447,7 +432,6 @@
       /* Team */
 
       .team-container {
-        padding: 0 2%;
         margin-top: 5%;
         grid-column-gap: 10px;
         grid-row-gap: 10px;
@@ -456,18 +440,14 @@
       .team-item {
         width: 345px;
         height: 300px;
-        /* height: auto; */
         box-shadow:0 0 4px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
         position: relative;
         overflow: hidden;
       }
    
       .slide {
-        /* display: none; */
         visibility: hidden;
         transition: .5s ease;
-        /* height: 0;
-        bottom: 0; */
         background: white;
         transform: translate3d(0px, 0px, 0px);
         overflow: hidden;
@@ -480,9 +460,6 @@
         transform: translate3d(0px, -155px, 0px);
         transition: .5s ease;
         visibility: visible;
-        /* position: absolute;
-        height: 50%;
-        bottom: 0; */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -490,6 +467,7 @@
       }
       .team-icons {
         padding: 8% 0 5% 0;
+        cursor: pointer;
       }
   
       .team-position {
@@ -523,25 +501,51 @@
       }
 
       /* Tablet to Small Laptop */
-      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      @media only screen and (min-width: 768px) and (max-width: 1023px) {
         .team-container {
-          grid-column-gap: 5%;
-          grid-row-gap: 3%;
+          grid-gap: 4%;
         }
         .team-item {
-          width: 100%;
-          height: auto;
+          width: 330;
+          height: 319;
+        }
+        .team-item:hover .slide {
+          transform: translate3d(0px, -150px, 0px);
         }
       }
+      @media only screen and (min-width: 1024px) {
+        .team-item {
+          width: 218px;
+          height: 204px;
+        }
+        .team-item:hover .slide {
+          transform: translate3d(0px, -105px, 0px);
+        }
+      }
+      @media only screen and (min-width: 1080px) {
+        .team-container {
+          grid-column-gap: 2%;
+        }
+        .team-item {
+          width: 255px;
+          height: 246px;
+        }
+        .team-item:hover .slide {
+          transform: translate3d(0px, -105px, 0px);
+        }
 
+      }
       /* Pricing */
 
       .price-container {
         justify-items: center;
         width: 90vw;  
       }
+      #col-4.price-container {
+        grid-gap: 2%;
+      }
       .price-item {
-        width: 90%;
+        width: 100%;
         box-shadow: 0 8px 10px #eaebed, 0 -1px 10px #eaebed;
         display: flex;
         flex-direction: column;
@@ -552,8 +556,9 @@
       .price-item * {
         padding: 6% 0;
       }
-      .price-item *:not(.plan):not(.cost) {
+      .price-item *:not(.plan):not(.cost):not(b) {
         width: 70%;
+        font-family: "Roboto", sans-serif;
         border-bottom: 1px solid rgba(153, 153, 153, 0.3);
       }
       .plan {
@@ -566,9 +571,9 @@
         font-size: 2rem;
       }
       .buy {
+        margin: 4% 0;
         color: white;
         border-radius: 500px; 
-        border:2px solid #71c55d; 
         background: #71c55d;
         padding: none;
         text-transform: uppercase;
@@ -577,26 +582,69 @@
       .buy:hover {
         background: #55b03f;
       }
+      #pricing.section-container {
+        padding-bottom: 5%;
+        height: auto;
+      }
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        #col-4.price-container {
+          grid-gap: 3%;
+        }
+      }
+      @media only screen and (min-width: 1024px) {
+        #pricing .separator {
+          margin-bottom: 8%;
+        }
+      }
       /* Blog */
+      @media only screen and (max-width: 425px) {
+        #blog.section-container {
+          margin-top: 35%;
+        }
+      }
+      #col-3.blog-container {
+        padding: 0 4% 8% 4%;
+      }
       .blog-container {
         grid-gap: 2%;
       }
       .blog-item {
         box-shadow: 0 5px 5px #eaebed, 0 -1px 5px #eaebed;
-        /* border: 2px solid lightgray; */
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        /* width: 90%; */
-        /* padding: 5% 3%; */
+        text-align: left;
         line-height: 2;
         font-weight: 100;
         transition: ease 0.5s;
         letter-spacing: 2px;
       }
-
+      .blog-description {
+        font-weight: 400;
+        padding-left: 4%;
+        font-size: 16px;
+      }
+      .blog-item span {
+        display: flex;
+        padding: 2%;
+        justify-content: space-evenly;
+        font-weight: 300;
+      }
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        /* #col-4.price-container {
+          grid-gap: 3%;
+        } */
+      }
+      @media only screen and (min-width: 1024px) {
+        #blog .separator {
+          margin-bottom: 8%;
+        }
+        #col-3.blog-container {
+          padding: 0 4% 4% 4%;
+        }
+        #blog.section-container {
+          padding-bottom: 0;
+        }
+      }
       /* Contact */
 
       .subscribe {
@@ -628,6 +676,7 @@
         font-weight: 500;
       }
       .subscribe-button {
+        border: 1px solid #74c362;
         margin-top: 5%;
         text-decoration: none;
         background: #74c362;
@@ -660,6 +709,7 @@
         font-family: "Roboto", sans-serif;
         font-weight: 300;
         text-align: center;
+        letter-spacing: 2px;
       }
       .basic-info-item * {
         padding: 0 2%;
@@ -682,6 +732,9 @@
         height: 40px;
         font-size: 11px;
       }
+      .message input {
+        height: 300px;
+      }
       .send-email button {
         text-decoration: none;
         background: #74c362;
@@ -691,6 +744,28 @@
         padding: 0 5%;
         font-size: 14px;
       }
+      @media only screen and (min-width: 1024px) {
+        /* .subscribe-overlay { */
+          /* justify-content: center; */
+          /* align-items: center; */
+        /* } */
+        .subscribe-button {
+          margin-top: 0;
+        }
+        .email {
+          width: 80vw;
+        }
+        .contact-container {
+          flex-direction: row;
+          justify-content: center;
+        }
+        .contact-info {
+          width: 100%;
+        }
+        .send-email {
+          width: 100%;
+        }
+      }
       /* Footer */
 
       #footer {
@@ -698,6 +773,7 @@
         background: #2a2c30;
         display: flex;
         flex-direction: column;
+        padding: 5% 3%;
       }
       #footer * {
         color: white;
@@ -705,7 +781,39 @@
       #footer #col-4 {
         justify-items: start;
       }
-
+      .footer-description h1 {
+        font-size: 24px;
+        letter-spacing: 2px;
+        font-weight: 500;
+      }
+      .footer-description p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+      .footer-item:not(h3) {
+        line-height: 2.5;
+      }
+      .footer-item h3 {
+        font-size: 16px;
+        text-decoration: uppercase;
+        padding: 5% 0;
+      }
+      @media only screen and (min-width: 1024px) {
+        #footer {
+          flex-direction: row;
+        }
+        .footer-description {
+          width: 25%;
+        }
+        .footer-container {
+          width: 75%;
+        }
+        #footer #col-4 {
+          grid-column-gap: 5%;
+        }
+      }
     </style>
     <script type="application/ld+json">
     {
@@ -729,10 +837,10 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
   <body>
-    <!-- <button on='tap:navbar' id="hamburger">☰</button>
+    <button on='tap:navbar' id="hamburger">☰</button>
     <div id="logo">
-      <a href="/"><span>e</span>Startups</a>
-    </div> -->
+      <a href="https://blakeswl.me" class="easter-egg"><span>e</span>Startups</a>
+    </div>
     
     <!-- <amp-sidebar id="navbar" layout="nodisplay" side="left">
       <ul class="nav-item" style="list-style: none">
@@ -986,7 +1094,8 @@
           </div>
         </div>
         <div class="team-item">
-          <amp-img class="team-pic" src="https://bootstrapmade.com/demo/themes/eStartup/img/team/3.jpg" width=345 height=300 layout=intrinsic></amp-img>
+          <amp-img class="team-pic" src="https://bootstrapmade.com/demo/themes/eStartup/img/team/3.jpg"
+          width=345 height=300 layout=intrinsic></amp-img>
           <div class="slide">
             <div class="team-icons">
               <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -1057,9 +1166,9 @@
         <div class="price-item">
           <div class="plan">Basic</div>
           <div class="cost">$29</div>
-          <div class="mem">4 GB Ram</div>
-          <div class="support">7/24 Tech Support</div>
-          <div class="storage">40 GB SSD Cloud Storage</div>
+          <div class="mem"><b>4 GB</b> Ram</div>
+          <div class="support"><b>7/24</b> Tech Support</div>
+          <div class="storage"><b>40 GB</b> SSD Cloud Storage</div>
           <div class="backup">Monthly Backups</div>
           <div class="protection">Palo Protection</div>
           <button class="buy">Buy Now</button>
@@ -1067,9 +1176,9 @@
         <div class="price-item">
           <div class="plan">Personal</div>
           <div class="cost">$29</div>
-          <div class="mem">4 GB Ram</div>
-          <div class="support">7/24 Tech Support</div>
-          <div class="storage">40 GB SSD Cloud Storage</div>
+          <div class="mem"><b>4 GB</b> Ram</div>
+          <div class="support"><b>7/24</b> Tech Support</div>
+          <div class="storage"><b>40 GB</b> SSD Cloud Storage</div>
           <div class="backup">Monthly Backups</div>
           <div class="protection">Palo Protection</div>
           <button class="buy">Buy Now</button>
@@ -1077,9 +1186,9 @@
         <div class="price-item">
           <div class="plan">Business</div>
           <div class="cost">$29</div>
-          <div class="mem">4 GB Ram</div>
-          <div class="support">7/24 Tech Support</div>
-          <div class="storage">40 GB SSD Cloud Storage</div>
+          <div class="mem"><b>4 GB</b> Ram</div>
+          <div class="support"><b>7/24</b> Tech Support</div>
+          <div class="storage"><b>40 GB</b> SSD Cloud Storage</div>
           <div class="backup">Monthly Backups</div>
           <div class="protection">Palo Protection</div>
           <button class="buy">Buy Now</button>
@@ -1087,9 +1196,9 @@
         <div class="price-item">
           <div class="plan">Professional</div>
           <div class="cost">$29</div>
-          <div class="mem">4 GB Ram</div>
-          <div class="support">7/24 Tech Support</div>
-          <div class="storage">40 GB SSD Cloud Storage</div>
+          <div class="mem"><b>4 GB</b> Ram</div>
+          <div class="support"><b>7/24</b> Tech Support</div>
+          <div class="storage"><b>40 GB</b> SSD Cloud Storage</div>
           <div class="backup">Monthly Backups</div>
           <div class="protection">Palo Protection</div>
           <button class="buy">Buy Now</button>
@@ -1102,19 +1211,19 @@
       <p class="separator">Integer Cursus Bibendum Augue asd sadfd</p>
       <div class="blog-container" id="col-3">
         <div class="blog-item">
-          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/blog/blog-image-1.jpg" height=220 width=360 layout=fixed></amp-img>
-          <p>What is the Difference between Good and Bad Typography</p>
-          <a href="">Read More</a>
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/blog/blog-image-1.jpg" height=220 width=360 layout=intrinsic></amp-img>
+          <p class="blog-description">What is the Difference between Good and Bad Typography</p>
+          <span><div>18, Jan 2019</div><a href="">Read More</a></span>
         </div>
         <div class="blog-item">
-          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/blog/blog-image-2.jpg" height=220 width=360 layout=fixed></amp-img>
-          <p>What is the Difference between Good and Bad Typography</p>
-          <a href="">Read More</a>
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/blog/blog-image-2.jpg" height=220 width=360 layout=intrinsic></amp-img>
+          <p class="blog-description">What is the Difference between Good and Bad Typography</p>
+          <span><div>18, Jan 2019</div><a href="">Read More</a></span>
         </div>
         <div class="blog-item">
-          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/blog/blog-image-3.jpg" height=220 width=360 layout=fixed></amp-img>
-          <p>What is the Difference between Good and Bad Typography</p>
-          <a href="">Read More</a>
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/blog/blog-image-3.jpg" height=220 width=360 layout=intrinsic></amp-img>
+          <p class="blog-description">What is the Difference between Good and Bad Typography</p>
+          <span><div>18, Jan 2019</div><a href="">Read More</a></span>
         </div>
       </div>
     </section>
@@ -1196,7 +1305,7 @@
             <input type="text" placeholder="Your Name">
             <input type="email" placeholder="Your Email">
             <input type="text" placeholder="Subject">
-            <input type="text" placeholder="Message">
+            <input type="text" placeholder="Message" class="message">
             <button>Send Message</button>
           </div>
         </div>
@@ -1205,7 +1314,7 @@
     <!-- Footer -->
     <section id="footer">
       <div class="footer-description">
-        <h1>eStartup</h1>
+        <h1 style="font-family: 'Philosopher', sans-serif;">eStartup</h1>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
       </div>
       <div class="footer-container" id="col-4">
