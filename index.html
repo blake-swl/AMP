@@ -1,0 +1,1141 @@
+
+
+<!doctype html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>eStartup Bootstrap Template</title>
+    <link rel="canonical" href="./regular-html-version.html">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Philosopher:700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body * {
+        font-family: "Helvetica Neue";
+        font-size: 14px;
+        text-decoration: none;
+        height: auto;
+        color: black;
+      }
+      .section-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 8% 0;
+        /* margin: 5% 0; */
+      }
+      .title {
+        text-align: center;
+        font-size: 45px;
+        font-weight: 100;
+        font-family: 'Roboto', sans-serif;
+        margin: 5% 0;
+      }
+      .separator {
+        color: #626262;
+        /* color: black; */
+        letter-spacing: 1px;
+        line-height: 2;
+        font-weight: 300;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        margin-bottom: 3%;
+      }
+      /* Grid Layouts */
+      #col-4, #col-3, #col-2 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        padding: 0 2%;
+      }
+      #col-2 {
+        padding: 0 4%;
+      }
+      /* Tablet to Small Laptop */
+      @media only screen and (min-width: 768px) and (max-width: 1000px) {
+        #col-4, #col-3, #col-2 {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 0 4%;
+        }
+      }
+      /* Desktop */
+      @media only screen and (min-width: 1000px) {
+        #col-4 {
+          grid-template-columns: repeat(4, 1fr);
+          padding: 0 4%;
+        }
+        #col-3 {
+          grid-template-columns: repeat(3, 1fr);
+          padding: 0 4%;
+        }
+        #col-2 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .title {
+          margin: 2% 0;
+        }
+        .separator {
+          margin: 2% 0;
+        }
+      }
+      @media only screen and (min-width: 1080px) {
+        body {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .section-container {
+          max-width: 80vw;
+        }
+      }
+     
+      /* Navbar */
+      #logo * {
+        /* padding-left:2%; */
+        /* margin-top: 5%; */
+        font-family: 'Philosopher', sans-serif;
+        font-size: 28px;
+        color: #555;
+        position: fixed;
+      }
+      #logo span {
+        color: #71c55d; 
+      }
+      /* #navbar {
+        height: 7vh;
+      } */
+      #hamburger {
+        /* outline: none;
+        border: none; */
+        top: 0;
+        right: 2%;
+        position: fixed;
+        font-size: 30px;
+      }
+      #target-element {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        width: 100%;
+        justify-content: flex-end;
+        height: 7vh;
+        background: white;
+      }
+      #target-element * {
+        transition: ease 0.5s;
+        color: rgba(51,51,51,.5);
+        text-decoration: none;
+        font-size: 12px;
+      }
+      .nav-item {
+        height: 100vh;
+        width: 60vw;
+        /* opacity: .5; */
+        background: #333;
+        padding: 10% 6%;
+        line-height: 3;
+      }
+      .nav-item * {
+        color: white;
+      }
+      #target-element *:hover {
+        color: #71c55d; 
+      }
+
+      /* Home */
+
+      #landing {
+        padding-top: 50%;
+      }
+      #landing * {
+        margin: 2% 0;
+        text-align: center;
+      }
+      #landing amp-img {
+        width: 100%;
+      }
+      .landing-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .started {
+        border-radius: 500px; 
+        border:2px solid #71c55d; 
+        color:#71c55d; 
+        text-transform: uppercase; 
+        padding: 3% 5%; 
+        width: 30%;
+        text-decoration: none; 
+        font-family: "Helvetica Neue";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+        transition: ease 0.5s;
+      }
+      .started:hover {
+        background: #71c55d;
+        color: white;
+      }
+      .buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-transform: uppercase;
+        font-size: 1.2vw;
+        margin: 5% 0;
+      }
+      .buttons a {
+        color: #555;
+        font-family: "Helvetica Neue";
+        line-break: none;
+        letter-spacing: .25em;
+        font-weight: 600;
+        font-size: 10px;
+      }
+      #intro {
+        margin-top: 40%;
+        font-weight: 300;
+        padding: 0 2%;
+      }
+      .item-container {
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+      }
+      .item-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        width: 90%;
+        padding: 5% 3%;
+        line-height: 2;
+        font-weight: 300;
+        transition: ease 0.5s;
+        letter-spacing: 2px;
+      }
+      .item-block amp-img {
+        padding: 3% 0 6% 0;
+      }
+      .item-block h3 {
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+      }
+      .item-block a {
+        font-weight: 500;
+      }
+      .item-block:hover {
+        box-shadow: 0 8px 10px #eaebed, 0 -1px 10px #eaebed;
+      }
+      /* Tablet to Small Laptop */
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        #landing {
+          padding-top: 15%;
+        }
+        #intro {
+          padding: 0 4%;
+        }
+      }
+      /* About */
+
+      #about {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        justify-items: center;
+        padding: 0 2%;
+      }
+      .phone-img {
+        border-radius: 5% 5%;
+        height: 80vh;
+        width: 90%;
+        align-self: center;
+        margin-bottom: 10%;
+      }
+      .bullets-container {
+        line-height: 2;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        padding: 0 2%;
+        font-family: sans-serif;
+        font-weight: 300;
+      }
+      .bullets-container h1 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+        font-size: 40px;
+        line-height: 1;
+        margin-bottom: 5%;
+      }
+      .bullets-container b {
+        font-size: 40px;
+        font-weight: 700;
+      }
+      .bullets-container p {
+        margin-bottom: 5%;
+      }
+      .bullets {
+        margin: 5% 0;
+      }
+
+      /* Features */
+      #features {
+        padding: 0 2%;
+      }
+
+      .feature-container {
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        justify-items: center;
+      }
+      .feature-item {
+        color: #626262;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        padding: 5% 3%;
+        height: auto;
+        line-height: 2;
+        font-weight: 300;
+        text-align: center;
+        transition: ease 0.5s;
+        letter-spacing: 2px;
+      }
+      .feature-item amp-img, h3, p {
+        margin: 3% 0;
+      }
+      .feature-item h3 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .feature-item:hover {
+        box-shadow: 0 8px 10px #eaebed, 0 -1px 10px #eaebed;
+      }
+
+      /* Tablet to Small Laptop */
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        #about {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 0 4%;
+        }
+        .phone-container {
+          align-self: center;
+          border: 2px solid red;
+          width: 35vw;
+        }
+        .bullets-container {
+          border: 2px solid blue;
+          width: 55vw;
+        }
+      }
+
+      /* Desktop+ */
+      @media only screen and (min-width: 1024px) {
+        #about {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+       .feature-item {
+         margin-bottom: 15%;
+       }
+      }
+
+      /* Screenshots */
+
+      #screenshots {
+        margin: 0;
+      }
+      amp-carousel {
+        margin: 10% 0;
+      }
+      #video {
+        background: url("https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") 50% 50% no-repeat;
+        width: 100%;
+        height: 50vh;
+      }
+
+      /* Team */
+
+      .team-container {
+        padding: 0 2%;
+        margin-top: 5%;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        justify-items: center;
+      }
+      .team-item {
+        width: 345px;
+        height: 300px;
+        /* height: auto; */
+        box-shadow:0 0 4px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
+        position: relative;
+        overflow: hidden;
+      }
+   
+      .slide {
+        /* display: none; */
+        visibility: hidden;
+        transition: .5s ease;
+        /* height: 0;
+        bottom: 0; */
+        background: white;
+        transform: translate3d(0px, 0px, 0px);
+        overflow: hidden;
+      }
+
+      .team-item:hover .slide {
+        background: white;
+        color:#626262;
+        width: 100%;
+        transform: translate3d(0px, -155px, 0px);
+        transition: .5s ease;
+        visibility: visible;
+        /* position: absolute;
+        height: 50%;
+        bottom: 0; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2% 0 5%;
+      }
+      .team-icons {
+        padding: 8% 0 5% 0;
+      }
+  
+      .team-position {
+        text-transform: lowercase;
+        font-weight: 400;
+        font-size: 16px;
+        padding: 2% 0;
+      }
+      .team-name {
+        text-transform: uppercase;
+        font-weight: 800;
+        padding: 2% 0 5% 0;
+      }
+      .testimonial-carousel {
+        margin-top: 30%;
+        box-shadow: 0 8px 10px #eaebed, 0 -1px 10px #eaebed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .testimonial {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      .testimonial-title {
+        font-size: 45px;
+        font-weight: 100;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      /* Tablet to Small Laptop */
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .team-container {
+          grid-column-gap: 5%;
+          grid-row-gap: 3%;
+        }
+        .team-item {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      /* Pricing */
+
+      .price-container {
+        justify-items: center;
+        width: 100%;  
+        /* grid-row-gap: 2%; */
+      }
+      .price-item {
+        width: 90%;
+        box-shadow: 0 8px 10px #eaebed, 0 -1px 10px #eaebed;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding-bottom: 5%;
+      }
+      .price-item * {
+        padding: 6% 0;
+      }
+      .price-item *:not(.plan):not(.cost) {
+        width: 70%;
+        border-bottom: 1px solid rgba(153, 153, 153, 0.3);
+      }
+      .plan {
+        padding-top: 10%;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .cost {
+        font-weight: 600;
+        font-size: 2rem;
+      }
+      .buy {
+        color: white;
+        border-radius: 500px; 
+        border:2px solid #71c55d; 
+        background: #71c55d;
+        padding: none;
+        text-transform: uppercase;
+        outline: none;
+      }
+      .buy:hover {
+        background: #55b03f;
+      }
+      /* Blog */
+      .blog-container {
+        grid-gap: 2%;
+      }
+      .blog-item {
+        box-shadow: 0 5px 5px #eaebed, 0 -1px 5px #eaebed;
+        /* border: 2px solid lightgray; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        /* width: 90%; */
+        /* padding: 5% 3%; */
+        line-height: 2;
+        font-weight: 100;
+        transition: ease 0.5s;
+        letter-spacing: 2px;
+      }
+
+      /* Contact */
+
+      .subscribe {
+        width: 100%;
+        background: url('https://images.unsplash.com/photo-1534430480872-3498386e7856?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80') no-repeat 50% 50% fixed;
+        background-size: cover;
+      }
+      .subscribe-overlay {
+        width: 100%;
+        height: auto;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(113,197,93,0));
+        display: flex;
+        flex-direction: column;
+        padding: 10% 0;
+      } 
+      /* .subscribe-container {
+        padding: 10% 0;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      } */
+      .subscribe-container input {
+        border: 1px solid lightgray;
+        text-align: center;
+        width: 100%;
+        height: 40px;
+        font-size: 11px;
+      }
+      .subscribe-container input::placeholder {
+        font-weight: 500;
+      }
+      .subscribe-button {
+        margin-top: 5%;
+        text-decoration: none;
+        background: #74c362;
+        color: white;
+        border: none;
+        height: 40px;
+        width: 100%;
+        font-size: 11px;
+        font-weight: 800;
+      }
+      .contact-icons {
+        padding-top: 8%;
+      }
+      .email {
+        padding-top: 5%;
+      }
+      .contact-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .basic-info {
+        padding: 0 5%;
+        /* margin: 0 5%; */
+      }
+      .basic-info-item {
+        padding: 5% 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        text-align: center;
+      }
+      .basic-info-item * {
+        padding: 0 2%;
+      }
+      .send-email {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* width: 100%; */
+        padding: 0 2%;
+      }
+      .send-email * {
+        margin: 2% 0;
+      }
+      .send-email input {
+        border: 1px solid lightgray;
+        border: 1px solid lightgray;
+        padding: 0 2%;
+        width: 90%;
+        height: 40px;
+        font-size: 11px;
+      }
+      .send-email button {
+        text-decoration: none;
+        background: #74c362;
+        color: white;
+        border: none;
+        height: 40px;
+        padding: 0 5%;
+        font-size: 14px;
+      }
+      /* Footer */
+
+      #footer {
+        color: white;
+        background: #2a2c30;
+        display: flex;
+        flex-direction: column;
+      }
+      #footer * {
+        color: white;
+      }
+      #footer #col-4 {
+        justify-items: start;
+      }
+
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Article headline",
+      "image": [
+        "thumbnail1.jpg"
+      ],
+      "datePublished": "2015-02-05T08:00:00+08:00"
+    }
+    </script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <button on='tap:navbar' id="hamburger">☰</button>
+    <div id="logo">
+      <a href="/"><span>e</span>Startups</a>
+    </div>
+    
+    <amp-sidebar id="navbar" layout="nodisplay" side="left">
+      <ul class="nav-item" style="list-style: none">
+        <li><a href="#landing">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li>Drop Down</li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <nav toolbar="(min-width: 760px)" toolbar-target="target-element">
+        <ul>
+            <li><a href="#landing">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#screenshots">Screenshots</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li>Drop Down</li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </amp-sidebar>
+    <header id="target-element">
+    </header>
+
+    <!-- Landing -->
+    <div id="landing">
+      <div class="landing-container">
+        <h1 style="font-family: 'Philosopher', sans-serif; color:#74c362; text-align: center; font-size: 28px">Welcome to eStartups</h1>
+        <h2 style="font-family: sans-serif; font-size: 1.2em; line-height: 24px; font-weight: 300; color: #555">Elegant Bootstrap Template for Startups, Apps, & more...</h2>
+        <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/hero-img.png"  height=185 alt="hero" layout=fixed-height></amp-img>
+        <a class="started" href="#intro">Get Started</a>
+        <div class="buttons">
+          <a href="">App Store</a>
+          <a href="">Google Play</a>
+          <a href="">Windows</a>
+        </div>
+      </div>
+      <section id="intro" class="section-container" amp-fx="fly-in-bottom">
+        <h2 class="title">Simple Systeme Foridscount</h2>
+        <p class="separator" style="margin-bottom: 2%;">Integer Cursus Bibendum Augue asd sadfd</p>
+        <div style="display: flex; justify-content: center;">
+          <div class="item-container" id="col-3">
+            <div class="item-block">
+              <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/cloud.svg" height=60 width=60 layout=fixed></amp-img>
+              <h3>Introducing Whatsapp</h3>
+              <p style="font-weight: 300; font-size: 15px; color: #626262;">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              <a href="">Read More</a>
+            </div>
+            <div class="item-block">
+              <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/planet.svg" height=60 width=60 layout=fixed></amp-img>
+              <h3>Introducing Whatsapp</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              <a href="">Read More</a>
+            </div>
+            <div class="item-block">
+              <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+              <h3>Introducing Whatsapp</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              <a href="">Read More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- About -->
+    <section id="about">
+      <div class="phone-container">
+        <amp-img class="phone-img" src="https://bootstrapmade.com/demo/themes/eStartup/img/about-img.png" height=400 width=200 layout=fixed amp-fx="fly-in-bottom" data-fly-in-distance="50%"></amp-img>
+      </div>
+      <div class="bullets-container">
+        <h1><b>ESTARTUP</b> UI Design Mobile</h1>
+        <p class="separator">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+        <ul class="bullets">
+          <li>Creative Design</li>
+          <li>Retina Ready</li>
+          <li>Easy To Use</li>
+          <li>Unlimited Features</li>
+          <li>Unlimited Features</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Features -->
+    <section id="features" class="section-container" amp-fx="fly-in-bottom">
+      <h1 class="title">Amazing Features.</h1>
+      <p class="separator">Integer Cursus Bibendum Augue Ac Cursus</p>
+      <div class="feature-container" id="col-4">
+        <div class="feature-item">
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/planet.svg" height=60 width=60 layout=fixed></amp-img>
+          <h3>Creative Design</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        </div>
+        <div class="feature-item">
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+          <h3>Retina Ready</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        </div>
+        <div class="feature-item">
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+          <h3>Easy To Use</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        </div>
+        <div class="feature-item">
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+          <h3>Free Updates</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        </div>
+        <div class="feature-item">
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+          <h3>Free Updates</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        </div>
+        <div class="feature-item">
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+          <h3>Introducing Whatsapp</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        </div>
+        <div class="feature-item">
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+          <h3>Introducing Whatsapp</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        </div>
+        <div class="feature-item">
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+          <h3>Introducing Whatsapp</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        </div>
+      </div>
+    </section>
+    <section id="screenshots" class="section-container" amp-fx="fly-in-bottom">
+      <h1 class="title">App Gallery</h1>
+      <p class="separator">Integer Cursus Bibendum Augue Ac Cursus .</p>
+      <amp-carousel width="350"
+        height="600">
+        <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/2.jpg"
+          width="350"
+          height="600"></amp-img>
+        <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/3.jpg"
+          width="350"
+          height="600"></amp-img>
+        <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/2.jpg"
+          width="350"
+          height="600"></amp-img>
+        <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/2.jpg"
+          width="350"
+          height="600"></amp-img>
+        <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/3.jpg"
+          width="350"
+          height="600"></amp-img>
+        <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/2.jpg"
+          width="350"
+          height="600"></amp-img>
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/2.jpg"
+          width="350"
+          height="600"></amp-img>
+        <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/3.jpg"
+          width="350"
+          height="600"></amp-img>
+        <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/2.jpg"
+          width="350"
+          height="600"></amp-img>
+        <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/2.jpg"
+          width="350"
+          height="600"></amp-img>
+        <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/3.jpg"
+          width="350"
+          height="600"></amp-img>
+        <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/2.jpg"
+          width="350"
+          height="600"></amp-img>
+      </amp-carousel>
+    </section>
+    <section>
+      <div id="video"></div>
+    </section>
+    <!-- Team -->
+    <section id="team" class="section-container">
+      <h1 class="title">Team Member</h1>
+      <p class="separator">Integer Cursus Bibendum Augue Ac Cursus .</p>
+      <div class="team-container" id="col-4">
+        <div class="team-item">
+          <amp-img class="team-pic" src="https://bootstrapmade.com/demo/themes/eStartup/img/team/1.jpg" width=345 height=300 layout=intrinsic></amp-img>
+          <div class="slide">
+            <div class="team-icons">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="15" height="15"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#626262"><path d="M89.6,201.6v-89.6h-29.86667v-29.86667h29.86667v-16.0384c0,-30.36693 14.79147,-43.69493 40.0288,-43.69493c12.08853,0 18.48,0.896 21.504,1.30667v28.56h-17.21067c-10.71467,0 -14.45547,5.65227 -14.45547,17.10613v12.76053h31.39733l-4.26347,29.86667h-27.13387v89.6z"></path></g></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="15" height="15"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#626262"><path d="M209.06667,51.79627c-7.1456,3.17333 -14.82133,5.3088 -22.87787,6.272c8.22827,-4.928 14.5376,-12.73067 17.50933,-22.03413c-7.69067,4.56213 -16.2176,7.87733 -25.29707,9.66933c-7.26507,-7.74293 -17.61387,-12.58133 -29.06773,-12.58133c-21.9968,0 -39.8272,17.83787 -39.8272,39.8272c0,3.12107 0.3584,6.16747 1.0304,9.072c-33.09973,-1.6576 -62.44373,-17.5168 -82.096,-41.6192c-3.41973,5.88373 -5.38347,12.7232 -5.38347,20.03307c0,13.81333 7.02613,26.0064 17.71093,33.14453c-6.52587,-0.20907 -12.67093,-2.00107 -18.03947,-4.98027c0,0.17173 0,0.32853 0,0.50027c0,19.30133 13.72373,35.39947 31.94987,39.05067c-3.3376,0.91093 -6.86187,1.39627 -10.49813,1.39627c-2.56107,0 -5.0624,-0.25387 -7.48907,-0.70933c5.06987,15.82187 19.7792,27.34293 37.2064,27.664c-13.62667,10.6848 -30.8,17.05387 -49.46667,17.05387c-3.21067,0 -6.384,-0.18667 -9.50507,-0.56c17.6288,11.29707 38.55787,17.89013 61.05493,17.89013c73.26293,0 113.31413,-60.68907 113.31413,-113.3216c0,-1.7248 -0.03733,-3.44213 -0.112,-5.152c7.78773,-5.6224 14.54507,-12.6336 19.88373,-20.61547z"></path></g></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="15" height="15"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#626262"><path d="M67.2,186.66667h-37.33333v-112h37.33333zM48.5408,59.73333c-10.3264,0 -18.67413,-8.37013 -18.67413,-18.67413c0,-10.304 8.36267,-18.6592 18.67413,-18.6592c10.28907,0 18.6592,8.37013 18.6592,18.6592c0,10.304 -8.37013,18.67413 -18.6592,18.67413zM201.6,186.66667h-35.89227v-54.50667c0,-12.99947 -0.2464,-29.71733 -18.6592,-29.71733c-18.68907,0 -21.56373,14.1568 -21.56373,28.77653v55.44747h-35.8848v-112.08213h34.4512v15.31413h0.48533c4.7936,-8.81067 16.5088,-18.0992 33.9808,-18.0992c36.36267,0 43.08267,23.21387 43.08267,53.39413z"></path></g></g></svg>
+            </div>            
+            <div class="team-position">Manager</div>
+            <div class="team-name">Kimberly Tran</div>
+          </div>
+        </div>
+        <div class="team-item">
+          <amp-img class="team-pic" src="https://bootstrapmade.com/demo/themes/eStartup/img/team/2.jpg" width=345 height=300 layout=intrinsic></amp-img>
+          <div class="slide">
+            <div class="team-icons">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="15" height="15"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#626262"><path d="M89.6,201.6v-89.6h-29.86667v-29.86667h29.86667v-16.0384c0,-30.36693 14.79147,-43.69493 40.0288,-43.69493c12.08853,0 18.48,0.896 21.504,1.30667v28.56h-17.21067c-10.71467,0 -14.45547,5.65227 -14.45547,17.10613v12.76053h31.39733l-4.26347,29.86667h-27.13387v89.6z"></path></g></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="15" height="15"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#626262"><path d="M209.06667,51.79627c-7.1456,3.17333 -14.82133,5.3088 -22.87787,6.272c8.22827,-4.928 14.5376,-12.73067 17.50933,-22.03413c-7.69067,4.56213 -16.2176,7.87733 -25.29707,9.66933c-7.26507,-7.74293 -17.61387,-12.58133 -29.06773,-12.58133c-21.9968,0 -39.8272,17.83787 -39.8272,39.8272c0,3.12107 0.3584,6.16747 1.0304,9.072c-33.09973,-1.6576 -62.44373,-17.5168 -82.096,-41.6192c-3.41973,5.88373 -5.38347,12.7232 -5.38347,20.03307c0,13.81333 7.02613,26.0064 17.71093,33.14453c-6.52587,-0.20907 -12.67093,-2.00107 -18.03947,-4.98027c0,0.17173 0,0.32853 0,0.50027c0,19.30133 13.72373,35.39947 31.94987,39.05067c-3.3376,0.91093 -6.86187,1.39627 -10.49813,1.39627c-2.56107,0 -5.0624,-0.25387 -7.48907,-0.70933c5.06987,15.82187 19.7792,27.34293 37.2064,27.664c-13.62667,10.6848 -30.8,17.05387 -49.46667,17.05387c-3.21067,0 -6.384,-0.18667 -9.50507,-0.56c17.6288,11.29707 38.55787,17.89013 61.05493,17.89013c73.26293,0 113.31413,-60.68907 113.31413,-113.3216c0,-1.7248 -0.03733,-3.44213 -0.112,-5.152c7.78773,-5.6224 14.54507,-12.6336 19.88373,-20.61547z"></path></g></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="15" height="15"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#626262"><path d="M67.2,186.66667h-37.33333v-112h37.33333zM48.5408,59.73333c-10.3264,0 -18.67413,-8.37013 -18.67413,-18.67413c0,-10.304 8.36267,-18.6592 18.67413,-18.6592c10.28907,0 18.6592,8.37013 18.6592,18.6592c0,10.304 -8.37013,18.67413 -18.6592,18.67413zM201.6,186.66667h-35.89227v-54.50667c0,-12.99947 -0.2464,-29.71733 -18.6592,-29.71733c-18.68907,0 -21.56373,14.1568 -21.56373,28.77653v55.44747h-35.8848v-112.08213h34.4512v15.31413h0.48533c4.7936,-8.81067 16.5088,-18.0992 33.9808,-18.0992c36.36267,0 43.08267,23.21387 43.08267,53.39413z"></path></g></g></svg>
+            </div>            
+            <div class="team-position">Manager</div>
+            <div class="team-name">Kimberly Tran</div>
+          </div>
+        </div>
+        <div class="team-item">
+          <amp-img class="team-pic" src="https://bootstrapmade.com/demo/themes/eStartup/img/team/3.jpg" width=345 height=300 layout=intrinsic></amp-img>
+          <div class="slide">
+            <div class="team-icons">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="15" height="15"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#626262"><path d="M89.6,201.6v-89.6h-29.86667v-29.86667h29.86667v-16.0384c0,-30.36693 14.79147,-43.69493 40.0288,-43.69493c12.08853,0 18.48,0.896 21.504,1.30667v28.56h-17.21067c-10.71467,0 -14.45547,5.65227 -14.45547,17.10613v12.76053h31.39733l-4.26347,29.86667h-27.13387v89.6z"></path></g></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="15" height="15"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#626262"><path d="M209.06667,51.79627c-7.1456,3.17333 -14.82133,5.3088 -22.87787,6.272c8.22827,-4.928 14.5376,-12.73067 17.50933,-22.03413c-7.69067,4.56213 -16.2176,7.87733 -25.29707,9.66933c-7.26507,-7.74293 -17.61387,-12.58133 -29.06773,-12.58133c-21.9968,0 -39.8272,17.83787 -39.8272,39.8272c0,3.12107 0.3584,6.16747 1.0304,9.072c-33.09973,-1.6576 -62.44373,-17.5168 -82.096,-41.6192c-3.41973,5.88373 -5.38347,12.7232 -5.38347,20.03307c0,13.81333 7.02613,26.0064 17.71093,33.14453c-6.52587,-0.20907 -12.67093,-2.00107 -18.03947,-4.98027c0,0.17173 0,0.32853 0,0.50027c0,19.30133 13.72373,35.39947 31.94987,39.05067c-3.3376,0.91093 -6.86187,1.39627 -10.49813,1.39627c-2.56107,0 -5.0624,-0.25387 -7.48907,-0.70933c5.06987,15.82187 19.7792,27.34293 37.2064,27.664c-13.62667,10.6848 -30.8,17.05387 -49.46667,17.05387c-3.21067,0 -6.384,-0.18667 -9.50507,-0.56c17.6288,11.29707 38.55787,17.89013 61.05493,17.89013c73.26293,0 113.31413,-60.68907 113.31413,-113.3216c0,-1.7248 -0.03733,-3.44213 -0.112,-5.152c7.78773,-5.6224 14.54507,-12.6336 19.88373,-20.61547z"></path></g></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="15" height="15"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#626262"><path d="M67.2,186.66667h-37.33333v-112h37.33333zM48.5408,59.73333c-10.3264,0 -18.67413,-8.37013 -18.67413,-18.67413c0,-10.304 8.36267,-18.6592 18.67413,-18.6592c10.28907,0 18.6592,8.37013 18.6592,18.6592c0,10.304 -8.37013,18.67413 -18.6592,18.67413zM201.6,186.66667h-35.89227v-54.50667c0,-12.99947 -0.2464,-29.71733 -18.6592,-29.71733c-18.68907,0 -21.56373,14.1568 -21.56373,28.77653v55.44747h-35.8848v-112.08213h34.4512v15.31413h0.48533c4.7936,-8.81067 16.5088,-18.0992 33.9808,-18.0992c36.36267,0 43.08267,23.21387 43.08267,53.39413z"></path></g></g></svg>
+            </div>            
+            <div class="team-position">Manager</div>
+            <div class="team-name">Kimberly Tran</div>
+          </div>
+        </div>
+        <div class="team-item">
+          <amp-img class="team-pic" src="https://bootstrapmade.com/demo/themes/eStartup/img/team/4.jpg" width=345 height=300 layout=intrinsic></amp-img>
+          <div class="slide">
+            <div class="team-icons">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="15" height="15"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#626262"><path d="M89.6,201.6v-89.6h-29.86667v-29.86667h29.86667v-16.0384c0,-30.36693 14.79147,-43.69493 40.0288,-43.69493c12.08853,0 18.48,0.896 21.504,1.30667v28.56h-17.21067c-10.71467,0 -14.45547,5.65227 -14.45547,17.10613v12.76053h31.39733l-4.26347,29.86667h-27.13387v89.6z"></path></g></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="15" height="15"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#626262"><path d="M209.06667,51.79627c-7.1456,3.17333 -14.82133,5.3088 -22.87787,6.272c8.22827,-4.928 14.5376,-12.73067 17.50933,-22.03413c-7.69067,4.56213 -16.2176,7.87733 -25.29707,9.66933c-7.26507,-7.74293 -17.61387,-12.58133 -29.06773,-12.58133c-21.9968,0 -39.8272,17.83787 -39.8272,39.8272c0,3.12107 0.3584,6.16747 1.0304,9.072c-33.09973,-1.6576 -62.44373,-17.5168 -82.096,-41.6192c-3.41973,5.88373 -5.38347,12.7232 -5.38347,20.03307c0,13.81333 7.02613,26.0064 17.71093,33.14453c-6.52587,-0.20907 -12.67093,-2.00107 -18.03947,-4.98027c0,0.17173 0,0.32853 0,0.50027c0,19.30133 13.72373,35.39947 31.94987,39.05067c-3.3376,0.91093 -6.86187,1.39627 -10.49813,1.39627c-2.56107,0 -5.0624,-0.25387 -7.48907,-0.70933c5.06987,15.82187 19.7792,27.34293 37.2064,27.664c-13.62667,10.6848 -30.8,17.05387 -49.46667,17.05387c-3.21067,0 -6.384,-0.18667 -9.50507,-0.56c17.6288,11.29707 38.55787,17.89013 61.05493,17.89013c73.26293,0 113.31413,-60.68907 113.31413,-113.3216c0,-1.7248 -0.03733,-3.44213 -0.112,-5.152c7.78773,-5.6224 14.54507,-12.6336 19.88373,-20.61547z"></path></g></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="15" height="15"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#626262"><path d="M67.2,186.66667h-37.33333v-112h37.33333zM48.5408,59.73333c-10.3264,0 -18.67413,-8.37013 -18.67413,-18.67413c0,-10.304 8.36267,-18.6592 18.67413,-18.6592c10.28907,0 18.6592,8.37013 18.6592,18.6592c0,10.304 -8.37013,18.67413 -18.6592,18.67413zM201.6,186.66667h-35.89227v-54.50667c0,-12.99947 -0.2464,-29.71733 -18.6592,-29.71733c-18.68907,0 -21.56373,14.1568 -21.56373,28.77653v55.44747h-35.8848v-112.08213h34.4512v15.31413h0.48533c4.7936,-8.81067 16.5088,-18.0992 33.9808,-18.0992c36.36267,0 43.08267,23.21387 43.08267,53.39413z"></path></g></g></svg>
+            </div>
+            <div class="team-position">Manager</div>
+            <div class="team-name">Kimberly Tran</div>
+          </div>
+        </div>
+      </div>
+      <div id="testimonial-container">
+        <amp-carousel width="320"
+          height="600" class="testimonial-carousel">
+          <div class="testimonial">
+            <div class="testimonial-title">Our Users Speack Volumes Us</div>
+            <p class="testimonial-message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+            <div class="testimonial-name">Kimberly Tran</div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-title">Our Users Speack Volumes Us</div>
+            <p class="testimonial-message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+            <div class="testimonial-name">Kimberly Tran</div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-title">Our Users Speack Volumes Us</div>
+            <p class="testimonial-message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+            <div class="testimonial-name">Kimberly Tran</div>
+          </div>
+        </amp-carousel>
+      </div>
+    </section>
+    <!-- Pricing -->
+    <section id="pricing" class="section-container" amp-fx="fly-in-bottom">
+      <h1 class="title">Meet With Price</h1>
+      <p class="separator">Integer Cursus Bibendum Augue Ac Cursus .</p>
+      <div class="price-container" id="col-4">
+        <div class="price-item">
+          <div class="plan">Basic</div>
+          <div class="cost">$29</div>
+          <div class="mem">4 GB Ram</div>
+          <div class="support">7/24 Tech Support</div>
+          <div class="storage">40 GB SSD Cloud Storage</div>
+          <div class="backup">Monthly Backups</div>
+          <div class="protection">Palo Protection</div>
+          <button class="buy">Buy Now</button>
+        </div>
+        <div class="price-item">
+          <div class="plan">Personal</div>
+          <div class="cost">$29</div>
+          <div class="mem">4 GB Ram</div>
+          <div class="support">7/24 Tech Support</div>
+          <div class="storage">40 GB SSD Cloud Storage</div>
+          <div class="backup">Monthly Backups</div>
+          <div class="protection">Palo Protection</div>
+          <button class="buy">Buy Now</button>
+        </div>
+        <div class="price-item">
+          <div class="plan">Business</div>
+          <div class="cost">$29</div>
+          <div class="mem">4 GB Ram</div>
+          <div class="support">7/24 Tech Support</div>
+          <div class="storage">40 GB SSD Cloud Storage</div>
+          <div class="backup">Monthly Backups</div>
+          <div class="protection">Palo Protection</div>
+          <button class="buy">Buy Now</button>
+        </div>
+        <div class="price-item">
+          <div class="plan">Professional</div>
+          <div class="cost">$29</div>
+          <div class="mem">4 GB Ram</div>
+          <div class="support">7/24 Tech Support</div>
+          <div class="storage">40 GB SSD Cloud Storage</div>
+          <div class="backup">Monthly Backups</div>
+          <div class="protection">Palo Protection</div>
+          <button class="buy">Buy Now</button>
+        </div>
+      </div>
+    </section>
+    <!-- Blog -->
+    <section id="blog" class="section-container" amp-fx="fly-in-bottom">
+      <h2 class="title">Latest Posts</h2>
+      <p class="separator">Integer Cursus Bibendum Augue asd sadfd</p>
+      <div class="blog-container" id="col-3">
+        <div class="blog-item">
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/blog/blog-image-1.jpg" height=220 width=360 layout=fixed></amp-img>
+          <p>What is the Difference between Good and Bad Typography</p>
+          <a href="">Read More</a>
+        </div>
+        <div class="blog-item">
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/blog/blog-image-2.jpg" height=220 width=360 layout=fixed></amp-img>
+          <p>What is the Difference between Good and Bad Typography</p>
+          <a href="">Read More</a>
+        </div>
+        <div class="blog-item">
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/blog/blog-image-3.jpg" height=220 width=360 layout=fixed></amp-img>
+          <p>What is the Difference between Good and Bad Typography</p>
+          <a href="">Read More</a>
+        </div>
+      </div>
+    </section>
+    <!-- Contact -->
+    <section id="contact" class="section-container">
+      <div class="subscribe">
+        <div class="subscribe-overlay">
+          <div class="subscribe-container" id="col-2">
+            <input type="email" placeholder="Email Address">
+            <button class="subscribe-button">SUBSCRIBE</button>
+          </div>
+          <div class="contact-icons">
+            <svg class="fb" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="40" height="40"
+            viewBox="0 0 224 224"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#74c362"><path d="M112,22.4c-49.4816,0 -89.6,40.1184 -89.6,89.6c0,49.4816 40.1184,89.6 89.6,89.6c49.4816,0 89.6,-40.1184 89.6,-89.6c0,-49.4816 -40.1184,-89.6 -89.6,-89.6zM143.21813,82.13333h-12.90987c-8.03413,0 -10.8416,4.24107 -10.8416,12.82773v9.57227h23.54987l-3.19573,22.4h-20.35413v59.36c-2.45653,0.23893 -4.94293,0.37333 -7.46667,0.37333c-5.11467,0 -10.10987,-0.52267 -14.93333,-1.5008v-58.23253h-22.4v-22.4h22.4v-12.0288c0,-22.77333 11.09547,-32.7712 30.02347,-32.7712c9.06453,0 13.85813,0.672 16.128,0.97813z"></path></g></g></svg>
+            <svg class="twitter" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="40" height="40"
+            viewBox="0 0 224 224"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#74c362"><path d="M112,22.4c-49.4816,0 -89.6,40.1184 -89.6,89.6c0,49.4816 40.1184,89.6 89.6,89.6c49.4816,0 89.6,-40.1184 89.6,-89.6c0,-49.4816 -40.1184,-89.6 -89.6,-89.6zM160.26453,93.59467c0.0448,0.99307 0.0672,1.97867 0.0672,2.96427c0,30.3744 -23.10933,65.37813 -65.37813,65.37813c-12.98453,0 -25.05813,-3.80053 -35.22027,-10.3264c1.79947,0.21653 3.6288,0.3136 5.488,0.3136c10.7744,0 20.6752,-3.66613 28.53013,-9.84107c-10.0576,-0.18667 -18.5472,-6.832 -21.46667,-15.95627c1.40373,0.2688 2.8448,0.41067 4.3232,0.41067c2.09813,0 4.13653,-0.28373 6.05547,-0.8064c-10.51307,-2.1056 -18.4352,-11.39413 -18.4352,-22.52693c0,-0.09707 0,-0.19413 0,-0.2912c3.09867,1.7248 6.63787,2.7552 10.40853,2.87467c-6.16,-4.11413 -10.22187,-11.1552 -10.22187,-19.12213c0,-4.21867 1.12747,-8.16853 3.10613,-11.55093c11.3344,13.90293 28.2688,23.05707 47.36107,24.0128c-0.38827,-1.68 -0.58987,-3.43467 -0.58987,-5.23413c0,-12.68587 10.28907,-22.9824 22.97493,-22.9824c6.608,0 12.58133,2.79253 16.77013,7.2576c5.23413,-1.03787 10.15467,-2.94187 14.59733,-5.5776c-1.71733,5.36853 -5.36107,9.86347 -10.10987,12.71573c4.64427,-0.55253 9.072,-1.78453 13.20107,-3.61387c-3.0688,4.6144 -6.95893,8.65387 -11.46133,11.90187z"></path></g></g></svg>
+            <svg class="gplus" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="40" height="40"
+            viewBox="0 0 224 224"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#74c362"><path d="M112,22.4c-49.4816,0 -89.6,40.1184 -89.6,89.6c0,49.4816 40.1184,89.6 89.6,89.6c49.4816,0 89.6,-40.1184 89.6,-89.6c0,-49.4816 -40.1184,-89.6 -89.6,-89.6zM89.6,156.8c-24.74453,0 -44.8,-20.05547 -44.8,-44.8c0,-24.74453 20.05547,-44.8 44.8,-44.8c11.648,0 22.25813,4.45013 30.2176,11.74507l-10.7072,10.4832c-5.23413,-4.53973 -12.04373,-7.29493 -19.5104,-7.29493c-16.49387,0 -29.86667,13.3728 -29.86667,29.86667c0,16.49387 13.3728,29.86667 29.86667,29.86667c14.79147,0 27.04427,-10.76693 29.41867,-24.8864h-29.41867v-14.93333h43.62773l0.2464,0.99307c0.59733,2.89707 0.92587,5.8912 0.92587,8.96c0,24.74453 -20.05547,44.8 -44.8,44.8zM171.73333,119.46667v14.93333h-14.93333v-14.93333h-14.93333v-14.93333h14.93333v-14.93333h14.93333v14.93333h14.93333v14.93333z"></path></g></g></svg>
+            <svg class="linkedin" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="40" height="40"
+            viewBox="0 0 224 224"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#74c362"><path d="M112,22.4c-49.4816,0 -89.6,40.1184 -89.6,89.6c0,49.4816 40.1184,89.6 89.6,89.6c49.4816,0 89.6,-40.1184 89.6,-89.6c0,-49.4816 -40.1184,-89.6 -89.6,-89.6zM78.37013,62.7424c6.28693,0 10.47573,4.1888 10.47573,9.77387c0,5.58507 -4.1888,9.77387 -11.17013,9.77387c-6.28693,0.00747 -10.47573,-4.1888 -10.47573,-9.77387c0,-5.58507 4.1888,-9.77387 11.17013,-9.77387zM89.6,149.33333h-22.4v-59.73333h22.4zM164.26667,149.33333h-21.08587v-32.64427c0,-9.0272 -5.6224,-11.1104 -7.728,-11.1104c-2.1056,0 -9.1392,1.3888 -9.1392,11.1104c0,1.3888 0,32.64427 0,32.64427h-21.78027v-59.73333h21.78773v8.3328c2.80747,-4.8608 8.42987,-8.3328 18.9728,-8.3328c10.54293,0 18.9728,8.3328 18.9728,27.08907z"></path></g></g></svg>          
+          </div>
+        </div>
+      </div>
+      <div class="email">
+        <h2 class="title">Contact</h2>
+        <p class="separator">Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit Voluptatem Accusantium Doloremque</p>
+        <div class="contact-container">
+          <div class="basic-info">
+            <div class="basic-info-item">
+              <div><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="30" height="30"
+                viewBox="0 0 224 224"
+                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#74c362"><path d="M112,14.93333c-45.36,0 -82.13333,36.77333 -82.13333,82.13333c0,54.01387 53.4016,79.87093 60.09173,85.88907c6.832,6.14507 12.4768,19.92107 14.75413,27.7312c1.10507,3.79307 4.2112,5.712 7.28747,5.79413c3.08373,-0.0896 6.1824,-2.00853 7.28747,-5.79413c2.27733,-7.81013 7.92213,-21.57867 14.75413,-27.7312c6.69013,-6.01813 60.09173,-31.8752 60.09173,-85.88907c0,-45.36 -36.77333,-82.13333 -82.13333,-82.13333zM112,119.46667c-12.37227,0 -22.4,-10.02773 -22.4,-22.4c0,-12.37227 10.02773,-22.4 22.4,-22.4c12.37227,0 22.4,10.02773 22.4,22.4c0,12.37227 -10.02773,22.4 -22.4,22.4z"></path></g></g></svg></div>
+              <div>A108 Adam Street <br>
+                  New York, NY 535022</div>
+            </div>
+            <div class="basic-info-item">
+              <div><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="30" height="30"
+                viewBox="0 0 224 224"
+                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#74c362"><path d="M18.94375,44.8l84.175,78.56041c4.98027,4.6592 12.7897,4.6592 17.7625,0l84.175,-78.56041zM7.46667,54.5125v124.6875h209.06667v-124.6875l-85.45833,79.75625c-5.3536,4.9952 -12.21314,7.49583 -19.075,7.49583c-6.86187,0 -13.7214,-2.50063 -19.075,-7.49583z"></path></g></g></svg></div>
+              <div>info@example.com</div>
+            </div>
+            <div class="basic-info-item">
+              <div><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="30" height="30"
+                viewBox="0 0 224 224"
+                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#74c362"><path d="M158.48,133.5712c-3.03147,-1.77707 -6.75733,-1.73973 -9.77387,0.05227l-15.2768,9.10187c-3.41973,2.0384 -7.69067,1.79947 -10.82667,-0.6496c-5.4208,-4.2336 -14.14933,-11.3568 -21.74293,-18.9504c-7.5936,-7.5936 -14.7168,-16.32213 -18.9504,-21.74293c-2.44907,-3.136 -2.688,-7.40693 -0.6496,-10.82667l9.10187,-15.2768c1.79947,-3.01653 1.8144,-6.77227 0.03733,-9.80373l-22.41493,-38.28907c-2.1728,-3.70347 -6.48853,-5.52533 -10.6624,-4.5024c-4.0544,0.9856 -9.3184,3.38987 -14.83627,8.9152c-17.27787,17.27787 -26.4544,46.42027 38.52053,111.3952c64.97493,64.97493 94.10987,55.80587 111.3952,38.52053c5.5328,-5.5328 7.9296,-10.80427 8.92267,-14.86613c1.008,-4.1664 -0.784,-8.45227 -4.48,-10.6176c-9.2288,-5.3984 -29.13493,-17.05387 -38.36373,-22.45973z"></path></g></g></svg></div>
+              <div>+1 5589 55488 55s</div>
+            </div>
+            <div class="basic-info-item icons">
+              <svg class="fb" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="40" height="40"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#74c362"><path d="M112,22.4c-49.4816,0 -89.6,40.1184 -89.6,89.6c0,49.4816 40.1184,89.6 89.6,89.6c49.4816,0 89.6,-40.1184 89.6,-89.6c0,-49.4816 -40.1184,-89.6 -89.6,-89.6zM143.21813,82.13333h-12.90987c-8.03413,0 -10.8416,4.24107 -10.8416,12.82773v9.57227h23.54987l-3.19573,22.4h-20.35413v59.36c-2.45653,0.23893 -4.94293,0.37333 -7.46667,0.37333c-5.11467,0 -10.10987,-0.52267 -14.93333,-1.5008v-58.23253h-22.4v-22.4h22.4v-12.0288c0,-22.77333 11.09547,-32.7712 30.02347,-32.7712c9.06453,0 13.85813,0.672 16.128,0.97813z"></path></g></g></svg>
+              <svg class="twitter" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="40" height="40"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#74c362"><path d="M112,22.4c-49.4816,0 -89.6,40.1184 -89.6,89.6c0,49.4816 40.1184,89.6 89.6,89.6c49.4816,0 89.6,-40.1184 89.6,-89.6c0,-49.4816 -40.1184,-89.6 -89.6,-89.6zM160.26453,93.59467c0.0448,0.99307 0.0672,1.97867 0.0672,2.96427c0,30.3744 -23.10933,65.37813 -65.37813,65.37813c-12.98453,0 -25.05813,-3.80053 -35.22027,-10.3264c1.79947,0.21653 3.6288,0.3136 5.488,0.3136c10.7744,0 20.6752,-3.66613 28.53013,-9.84107c-10.0576,-0.18667 -18.5472,-6.832 -21.46667,-15.95627c1.40373,0.2688 2.8448,0.41067 4.3232,0.41067c2.09813,0 4.13653,-0.28373 6.05547,-0.8064c-10.51307,-2.1056 -18.4352,-11.39413 -18.4352,-22.52693c0,-0.09707 0,-0.19413 0,-0.2912c3.09867,1.7248 6.63787,2.7552 10.40853,2.87467c-6.16,-4.11413 -10.22187,-11.1552 -10.22187,-19.12213c0,-4.21867 1.12747,-8.16853 3.10613,-11.55093c11.3344,13.90293 28.2688,23.05707 47.36107,24.0128c-0.38827,-1.68 -0.58987,-3.43467 -0.58987,-5.23413c0,-12.68587 10.28907,-22.9824 22.97493,-22.9824c6.608,0 12.58133,2.79253 16.77013,7.2576c5.23413,-1.03787 10.15467,-2.94187 14.59733,-5.5776c-1.71733,5.36853 -5.36107,9.86347 -10.10987,12.71573c4.64427,-0.55253 9.072,-1.78453 13.20107,-3.61387c-3.0688,4.6144 -6.95893,8.65387 -11.46133,11.90187z"></path></g></g></svg>
+              <svg class="gplus" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="40" height="40"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#74c362"><path d="M112,22.4c-49.4816,0 -89.6,40.1184 -89.6,89.6c0,49.4816 40.1184,89.6 89.6,89.6c49.4816,0 89.6,-40.1184 89.6,-89.6c0,-49.4816 -40.1184,-89.6 -89.6,-89.6zM89.6,156.8c-24.74453,0 -44.8,-20.05547 -44.8,-44.8c0,-24.74453 20.05547,-44.8 44.8,-44.8c11.648,0 22.25813,4.45013 30.2176,11.74507l-10.7072,10.4832c-5.23413,-4.53973 -12.04373,-7.29493 -19.5104,-7.29493c-16.49387,0 -29.86667,13.3728 -29.86667,29.86667c0,16.49387 13.3728,29.86667 29.86667,29.86667c14.79147,0 27.04427,-10.76693 29.41867,-24.8864h-29.41867v-14.93333h43.62773l0.2464,0.99307c0.59733,2.89707 0.92587,5.8912 0.92587,8.96c0,24.74453 -20.05547,44.8 -44.8,44.8zM171.73333,119.46667v14.93333h-14.93333v-14.93333h-14.93333v-14.93333h14.93333v-14.93333h14.93333v14.93333h14.93333v14.93333z"></path></g></g></svg>
+              <svg class="linkedin" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="40" height="40"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#74c362"><path d="M112,22.4c-49.4816,0 -89.6,40.1184 -89.6,89.6c0,49.4816 40.1184,89.6 89.6,89.6c49.4816,0 89.6,-40.1184 89.6,-89.6c0,-49.4816 -40.1184,-89.6 -89.6,-89.6zM78.37013,62.7424c6.28693,0 10.47573,4.1888 10.47573,9.77387c0,5.58507 -4.1888,9.77387 -11.17013,9.77387c-6.28693,0.00747 -10.47573,-4.1888 -10.47573,-9.77387c0,-5.58507 4.1888,-9.77387 11.17013,-9.77387zM89.6,149.33333h-22.4v-59.73333h22.4zM164.26667,149.33333h-21.08587v-32.64427c0,-9.0272 -5.6224,-11.1104 -7.728,-11.1104c-2.1056,0 -9.1392,1.3888 -9.1392,11.1104c0,1.3888 0,32.64427 0,32.64427h-21.78027v-59.73333h21.78773v8.3328c2.80747,-4.8608 8.42987,-8.3328 18.9728,-8.3328c10.54293,0 18.9728,8.3328 18.9728,27.08907z"></path></g></g></svg>          
+            </div>
+          </div>
+          <div class="send-email">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <input type="text" placeholder="Subject">
+            <input type="text" placeholder="Message">
+            <button>Send Message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <section id="footer">
+      <div class="footer-description">
+        <h1>eStartup</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
+      </div>
+      <div class="footer-container" id="col-4">
+        <div class="footer-item">
+          <h3>About Us</h3>
+          <div>About us</div>
+          <div>Features Item</div>
+          <div>Live Streaming</div>
+          <div>Privacy Policy</div>
+        </div>
+        <div class="footer-item">
+          <h3>About Us</h3>
+          <div>About us</div>
+          <div>Features Item</div>
+          <div>Live Streaming</div>
+          <div>Privacy Policy</div>
+        </div>
+        <div class="footer-item">
+          <h3>About Us</h3>
+          <div>About us</div>
+          <div>Features Item</div>
+          <div>Live Streaming</div>
+          <div>Privacy Policy</div>
+        </div>
+        <div class="footer-item">
+          <h3>About Us</h3>
+          <div>About us</div>
+          <div>Features Item</div>
+          <div>Live Streaming</div>
+          <div>Privacy Policy</div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
