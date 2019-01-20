@@ -12,6 +12,14 @@
     <style amp-custom>
 
       /* Global Styles */
+      html, body {
+        margin: none;
+        padding: none;
+        z-index: 0;
+        max-width: 100%;
+        height: auto;
+        overflow-x: hidden;
+      }
       * {
         margin: 0;
         padding: 0;
@@ -889,19 +897,6 @@
       </amp-carousel>
     </section>
     <section>
-        <!-- <amp-youtube width="480"
-        height="270"
-        layout="responsive"
-        data-videoid="lBTCB7yLs8Y"
-        lightbox-thumbnail-id="my-thumbnail-img">
-      </amp-youtube>
-      
-      <amp-img id="my-thumbnail-img"
-        width="200"
-        height="200"
-        layout="nodisplay"
-        src="https://picsum.photos/200/200?image=1074">
-      </amp-img> -->
       <div id="video">
         <div class="playbtn">
             <svg on="tap:youtube"
@@ -929,9 +924,6 @@
           width="640" height="480"></amp-youtube>
         </amp-lightbox>
       </div>
-      <!-- <amp-image-lightbox id="youtube"
-     layout="nodisplay"></amp-image-lightbox> -->
-
     </section>
     <!-- Team -->
     <section id="team" class="section-container">
