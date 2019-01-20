@@ -47,7 +47,6 @@
       }
       .separator {
         color: #626262;
-        /* color: black; */
         letter-spacing: 1px;
         line-height: 2;
         font-weight: 300;
@@ -100,8 +99,30 @@
           flex-direction: column;
           align-items: center;
         }
-        section {
-          max-width: 70vw;
+        #intro.section-container, #about, #features.section-container, #screenshots.section-container, #pricing.section-container, #blog.section-container {
+          width: 70vw;
+        }
+        #video {
+          width: 100vw;
+        }
+        #contact.section-container, #footer {
+          width: 100vw;
+        }
+        .email.contact-container {
+          width: 70vw;
+        }
+        .basic-info {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        #contact.basic-info {
+          padding-left: 5%;
+        }
+        .send-email {
+          padding: 0;
+          width: 100%;
         }
       }
      
@@ -121,10 +142,12 @@
         height: 7vh;
       } */
       #hamburger {
-        /* outline: none;
-        border: none; */
-        /* top: 0;
-        right: 2%; */
+        background: none;
+        color: grey;
+        outline: none;
+        border: none;
+        top: 0;
+        right: 2%;
         position: fixed;
         font-size: 30px;
       }
@@ -134,7 +157,7 @@
         position: fixed;
         width: 100%;
         justify-content: flex-end;
-        height: 7vh;
+        /* height: 7vh; */
         background: white;
       }
       #target-element * {
@@ -149,6 +172,7 @@
         background: #333;
         padding: 10% 6%;
         line-height: 3;
+        margin: 0;
       }
       .nav-item * {
         color: white;
@@ -205,9 +229,6 @@
         text-transform: uppercase;
         font-size: 1.2vw;
         margin: 5% 0;
-        /* background: url('https://bootstrapmade.com/demo/themes/eStartup/img/hero-bg.png') 50% 50% no-repeat fixed;
-        background-size: contain; */
-
       }
       .buttons a {
         color: #555;
@@ -218,14 +239,12 @@
         font-size: 10px;
       }
       #intro {
-        /* margin-top: 40%; */
         font-weight: 300;
         padding: 0 2%;
       }
       .item-container {
         grid-column-gap: 10px;
         grid-row-gap: 10px;
-        /* padding-bottom: 15%; */
       }
       .item-block {
         display: flex;
@@ -258,6 +277,7 @@
       @media only screen and (min-width: 768px) and (max-width: 1024px) {
         #landing {
           background: url('https://bootstrapmade.com/demo/themes/eStartup/img/hero-bg.png') 50% 50% no-repeat fixed;
+          background-position: bottom;
           padding-top: 15%;
           height: 100vh;
         }
@@ -270,6 +290,7 @@
           height: 100vh;
           padding-top: 10%;
           background: url('https://bootstrapmade.com/demo/themes/eStartup/img/hero-bg.png') 50% 50% no-repeat fixed;
+          background-position: bottom;
         }
         #landing * {
           margin: 1% 0;
@@ -279,6 +300,11 @@
         }
         .landing-container h1 {
           font-size: 48px;
+        }
+      }
+      @media only screen and (min-width: 1080px) {
+        #landing {
+          width: 100vw;
         }
       }
       /* About */
@@ -391,9 +417,6 @@
       #screenshots {
         margin: 0;
       }
-      /* amp-carousel {
-        margin: 10% 0;
-      } */
       .image-slider {
         width: 100%;
         display: flex;
@@ -495,9 +518,9 @@
       .testimonial-carousel {
         margin-top: 30%;
         box-shadow: 0 8px 10px #eaebed, 0 -1px 10px #eaebed;
-        display: flex;
+        /* display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; */
       }
       .testimonial {
         width: 100%;
@@ -822,7 +845,7 @@
           width: 75%;
         }
         #footer #col-4 {
-          grid-column-gap: 5%;
+          grid-column-gap: 2%;
         }
       }
     </style>
@@ -848,7 +871,9 @@
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
-  <body>    
+  <body>
+        <!-- ToDO -->
+        <!-- Navbar, Scroll, Testimonial, tablet padding -->
     <amp-sidebar id="navbar" layout="nodisplay" side="left">
       <ul class="nav-item" style="list-style: none">
         <li><a href="#landing">Home</a></li>
@@ -1089,8 +1114,8 @@
         </div>
       <!-- </amp-carousel> -->
     </section>
-    <section>
-      <div id="video">
+    <section id="video">
+      <div >
         <div class="playbtn">
             <svg on="tap:youtube"
             role="button"
@@ -1211,7 +1236,7 @@
       </div>
       <div id="testimonial-container">
         <amp-carousel width="320"
-          height="600" class="testimonial-carousel">
+          height="600" class="testimonial-carousel" layout="fixed">
           <div class="testimonial">
             <div class="testimonial-title">Our Users Speack Volumes Us</div>
             <p class="testimonial-message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
