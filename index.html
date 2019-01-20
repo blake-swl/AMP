@@ -85,16 +85,16 @@
           margin: 2% 0;
         }
       }
-      @media only screen and (min-width: 1080px) {
+      /* @media only screen and (min-width: 1080px) {
         body {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
         .section-container {
-          max-width: 80vw;
+          max-width: 70vw;
         }
-      }
+      } */
      
       /* Navbar */
       #logo * {
@@ -372,17 +372,13 @@
         }
         .phone-container {
           padding-left: 100%;
-          /* justify-items: end; */
         }
-        /* #about {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
+        .bullets-container {
+          padding-right: 15%;
         }
        .feature-item {
          margin-bottom: 15%;
-       } */
+       }
       }
 
       /* Screenshots */
@@ -397,7 +393,34 @@
         background: url("https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") 50% 50% no-repeat;
         width: 100%;
         height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
+      .playbtn {
+        cursor: pointer;
+      }
+      .lightbox {
+        background: rgba(0,0,0,0.8);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      amp-youtube {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+      }
+      .close {
+        right: 0;
+        top: 0;
+        position: absolute;
+      }
+
 
       /* Team */
 
@@ -675,6 +698,10 @@
     }
     </script>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
@@ -862,7 +889,49 @@
       </amp-carousel>
     </section>
     <section>
-      <div id="video"></div>
+        <!-- <amp-youtube width="480"
+        height="270"
+        layout="responsive"
+        data-videoid="lBTCB7yLs8Y"
+        lightbox-thumbnail-id="my-thumbnail-img">
+      </amp-youtube>
+      
+      <amp-img id="my-thumbnail-img"
+        width="200"
+        height="200"
+        layout="nodisplay"
+        src="https://picsum.photos/200/200?image=1074">
+      </amp-img> -->
+      <div id="video">
+        <div class="playbtn">
+            <svg on="tap:youtube"
+            role="button"
+            tabindex="0"
+            xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="50" height="50"
+            viewBox="0 0 224 224"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#74c362"><g id="surface1"><path d="M112,8.96c-56.8225,0 -103.04,46.2175 -103.04,103.04c0,56.8225 46.2175,103.04 103.04,103.04c56.8225,0 103.04,-46.2175 103.04,-103.04c0,-56.8225 -46.2175,-103.04 -103.04,-103.04zM85.12,156.8v-89.6l76.16,44.8z"></path></g></g></g></svg>
+        </div>
+        <amp-lightbox id="youtube"
+          class="lightbox"
+          layout="nodisplay"
+          animate-in=fade-in>
+          <button on="tap:youtube.close" class="close">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+              width="50" height="50"
+              viewBox="0 0 224 224"
+              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#000000"><g id="surface1"><path d="M41.02,28.28l-12.74,12.74l70.98,70.98l-71.4,71.54l12.6,12.6l71.54,-71.4l71.4,71.4l12.74,-12.74l-71.4,-71.4l70.98,-70.98l-12.74,-12.74l-70.98,70.98z"></path></g></g></g></svg>          </button>
+          <amp-youtube
+          data-videoid="s22ViV7tBKE"
+          role="button"
+          tabindex="0"
+          layout="fixed"
+          width="640" height="480"></amp-youtube>
+        </amp-lightbox>
+      </div>
+      <!-- <amp-image-lightbox id="youtube"
+     layout="nodisplay"></amp-image-lightbox> -->
+
     </section>
     <!-- Team -->
     <section id="team" class="section-container">
