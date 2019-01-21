@@ -140,6 +140,13 @@
       }
      
       /* Navbar */
+      #marker {
+        position: absolute;
+        top: 7vh;
+        width: 0px;
+        height: 0px;
+        outline: 2px solid red;
+      }
       .header {
         display: flex;
         background: white;
@@ -226,6 +233,8 @@
           text-decoration: none;
           transition: ease 0.5s;
           outline: none;
+          font-family: "Roboto", sans-serif;
+          font-weight: 400;
         }
         ol div:hover {
           color: #71c55d;;
@@ -279,8 +288,10 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         text-transform: uppercase;
         font-size: 1.2vw;
+        text-align: center;
         margin: 5% 0;
       }
       .buttons a {
@@ -290,6 +301,13 @@
         letter-spacing: .25em;
         font-weight: 600;
         font-size: 10px;
+        padding: 0 2%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+      }
+      .buttons a * {
+        padding: 0 5px;
       }
       #intro {
         font-weight: 300;
@@ -353,6 +371,9 @@
         }
         .landing-container h1 {
           font-size: 48px;
+        }
+        .buttons a {
+          font-size: 14px;
         }
       }
       @media only screen and (min-width: 1080px) {
@@ -558,9 +579,6 @@
         font-weight: 800;
         padding: 2% 0 5% 0;
       }
-      /* #testimonial-container {
-        width: 60%;
-      } */
       #testimonial {
         margin-top: 10%;
         width: 90%;
@@ -669,6 +687,7 @@
         padding: none;
         text-transform: uppercase;
         outline: none;
+        cursor: pointer;
       }
       .buy:hover {
         background: #55b03f;
@@ -720,11 +739,7 @@
         justify-content: space-evenly;
         font-weight: 300;
       }
-      @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        /* #col-4.price-container {
-          grid-gap: 3%;
-        } */
-      }
+    
       @media only screen and (min-width: 1024px) {
         #blog .separator {
           margin-bottom: 8%;
@@ -785,7 +800,6 @@
       }
       .basic-info {
         padding: 0 5%;
-        /* margin: 0 5%; */
       }
       .basic-info-item {
         padding: 5% 0;
@@ -829,12 +843,8 @@
         padding: 0 5%;
         font-size: 14px;
       }
-      @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        .subscribe-button {
-          margin-top: 0;
-        }
-      }
-      @media only screen and (min-width: 1024px) {
+   
+      @media only screen and (min-width: 768px) {
         .subscribe-button {
           margin-top: 0;
         }
@@ -850,6 +860,11 @@
         }
         .send-email {
           width: 100%;
+        }
+      }
+      @media only screen and (min-width: 1080px) {
+        .email {
+          width: 60vw;
         }
       }
       /* Footer */
@@ -892,6 +907,7 @@
         }
         .footer-description {
           width: 25%;
+          padding-left: 2%;
         }
         .footer-container {
           width: 75%;
@@ -949,6 +965,10 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
   <body>
+    <div id="marker">
+      <amp-position-observer on="enter:hideBorder.start; exit:showBorder.start;" layout="nodisplay">
+      </amp-position-observer>
+    </div>
     <amp-sidebar id="navbar" layout="nodisplay">
       <div>
         <div role="button" on="tap:navbar.toggle" tabindex="0" class="trigger close" style="color: white;">✕</div>
@@ -983,7 +1003,42 @@
           <li><div role=button tabindex="0" on="tap:contact.scrollTo(duration=500)">Contact</div></li>
         </ol>
       </nav>
+      <amp-animation id="showBorder" layout="nodisplay">
+        <script type="application/json">
+          {
+            "duration": "0ms",
+            "fill": "both",
+            "iterations": "1",
+            "direction": "alternate",
+            "animations": [{
+                "selector": "#header1",
+                "keyframes": [{
+                  "visibility": "visible"
+                }]
+              }
+            ]
+          }
+        </script>
+      </amp-animation>
+      <amp-animation id="hideBorder" layout="nodisplay">
+        <script type="application/json">
+          {
+            "duration": "0ms",
+            "fill": "both",
+            "iterations": "1",
+            "direction": "alternate",
+            "animations": [{
+                "selector": "#header1",
+                "keyframes": [{
+                  "visibility": "hidden"
+                }]
+              }
+            ]
+          }
+        </script>
+      </amp-animation>
     </header>                 
+
     <!-- Landing -->
     <div id="landing">
       <amp-position-observer on="enter:hideAnim.start; exit:showAnim.start"
@@ -1034,9 +1089,18 @@
         <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/hero-img.png"  height=398 width=768 alt="hero" layout=intrinsic></amp-img>
         <a class="started" href="#intro">Get Started</a>
         <div class="buttons">
-          <a href="">App Store</a>
-          <a href="">Google Play</a>
-          <a href="">Windows</a>
+          <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="15" height="15"
+            viewBox="0 0 224 224"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#555555"><path d="M190.88533,73.06133c-0.9184,0.57493 -22.7808,12.70827 -22.7808,39.61067c1.0304,30.68053 27.58933,41.44 28.0448,41.44c-0.45547,0.57493 -4.0096,14.65707 -14.5376,29.41867c-8.3552,12.71573 -17.6288,25.536 -31.71093,25.536c-13.3952,0 -18.20373,-8.47467 -33.65973,-8.47467c-16.5984,0 -21.29493,8.47467 -34.0032,8.47467c-14.08213,0 -24.04267,-13.5072 -32.85333,-26.10347c-11.4464,-16.4864 -21.17547,-42.3584 -21.51893,-67.2c-0.23147,-13.16373 2.29227,-26.10347 8.69867,-37.0944c9.04213,-15.344 25.18507,-25.76 42.81387,-26.10347c13.5072,-0.45547 25.52853,9.2736 33.77173,9.2736c7.89973,0 22.6688,-9.2736 39.3792,-9.2736c7.2128,0.00747 26.44693,2.18027 38.35627,20.496zM112.00747,49.93707c-2.40427,-12.02133 4.2336,-24.04267 10.416,-31.71093c7.89973,-9.2736 20.37653,-15.568 31.136,-15.568c0.68693,12.02133 -3.66613,23.8112 -11.4464,32.39787c-6.98133,9.2736 -19.00267,16.25493 -30.1056,14.88107z"></path></g></g></svg> App Store</a>
+          <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="15" height="15"
+            viewBox="0 0 224 224"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#555555"><path d="M44.8,22.4c-4.12373,0 -7.46667,3.34294 -7.46667,7.46667c-0.00002,0.00972 -0.00002,0.01944 0,0.02917v82.10417v82.10417c-0.00002,0.00972 -0.00002,0.01944 0,0.02916c0,4.12373 3.34294,7.46667 7.46667,7.46667c1.55427,-0.00449 3.0684,-0.49391 4.33125,-1.4l0.01458,0.01458l148.09375,-81.43333c2.65379,-1.21406 4.35704,-3.86294 4.36041,-6.78125c0.0015,-3.00371 -1.79704,-5.71588 -4.56458,-6.88333l-147.88958,-81.33125h-0.01458c-1.26458,-0.90091 -2.77857,-1.38518 -4.33125,-1.38542z"></path></g></g></svg> Google Play</a>
+          <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="15" height="15"
+            viewBox="0 0 224 224"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#555555"><path d="M194.13333,29.86667c-0.49995,0.00354 -0.99829,0.05728 -1.4875,0.16042l-0.01458,-0.01458l-75.03125,10.2375v64.28333h84v-67.2c0,-4.12373 -3.34294,-7.46667 -7.46667,-7.46667zM102.60834,42.27708l-73.71875,10.0625c-3.71055,0.48977 -6.48522,3.65101 -6.48958,7.39375v44.8h80.20834zM22.4,119.46667v44.8c0.00339,3.83318 2.9088,7.0411 6.72292,7.42292l73.48542,10.03333v-62.25625zM117.6,119.46667v64.28333l75.03125,10.2375c0.00486,0 0.00972,0 0.01458,0c0.48971,0.09824 0.98804,0.14709 1.4875,0.14583c4.12373,0 7.46667,-3.34294 7.46667,-7.46667v-67.2z"></path></g></g></svg> Windows</a>
         </div>
       </div>
     </div>
