@@ -473,20 +473,10 @@
       /* Screenshots */
 
       #screenshots {
-        margin: 0;
-      }
-      .image-slider {
         width: 100%;
-        display: flex;
-        scroll-snap-type: x mandatory;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        height: auto;
       }
-      .image-slider amp-img {
-        flex: 0 0 auto;
-        margin: 1%;
+      #screenshots amp-carousel {
+        padding: 0 5%;
       }
       #video {
         background: url("https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") 50% 50% no-repeat;
@@ -972,7 +962,7 @@
     
     <amp-sidebar id="navbar" layout="nodisplay">
       <div class="flex justify-start items-center ampstart-sidebar-header">
-        <div role="button" on="tap:navbar.toggle" tabindex="0" class="trigger close">✕</div>
+        <div role="button" on="tap:navbar.toggle" tabindex="0" class="trigger close" style="color: white;">✕</div>
       </div>
       <nav class="sidebar-nav">
         <ul class="nav-item">
@@ -1006,7 +996,6 @@
     <div id="landing">
         <h3 class="target">
           <a class="target-anchor" id="top"></a>
-          <!-- This is the target. -->
           <amp-position-observer
             on="enter:hideAnim.start; exit:showAnim.start"
             layout="nodisplay">
@@ -1111,17 +1100,17 @@
       <p class="separator">Integer Cursus Bibendum Augue Ac Cursus</p>
       <div class="feature-container" id="col-4">
         <div class="feature-item">
-          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/planet.svg" height=60 width=60 layout=fixed></amp-img>
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/paint-palette.svg" height=60 width=60 layout=fixed></amp-img>
           <h3>Creative Design</h3>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
         </div>
         <div class="feature-item">
-          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/vector.svg" height=60 width=60 layout=fixed></amp-img>
           <h3>Retina Ready</h3>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
         </div>
         <div class="feature-item">
-          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/design-tool.svg" height=60 width=60 layout=fixed></amp-img>
           <h3>Easy To Use</h3>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
         </div>
@@ -1136,17 +1125,17 @@
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
         </div>
         <div class="feature-item">
-          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/cloud-computing.svg" height=60 width=60 layout=fixed></amp-img>
           <h3>Introducing Whatsapp</h3>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
         </div>
         <div class="feature-item">
-          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/pixel.svg" height=60 width=60 layout=fixed></amp-img>
           <h3>Introducing Whatsapp</h3>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
         </div>
         <div class="feature-item">
-          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/asteroid.svg" height=60 width=60 layout=fixed></amp-img>
+          <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/svg/code.svg" height=60 width=60 layout=fixed></amp-img>
           <h3>Introducing Whatsapp</h3>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
         </div>
@@ -1155,9 +1144,12 @@
     <section id="screenshots" class="section-container" amp-fx="fly-in-bottom">
       <h1 class="title">App Gallery</h1>
       <p class="separator">Integer Cursus Bibendum Augue Ac Cursus .</p>
-      <!-- <amp-carousel width="350"
-        height="600"> -->
-        <div class="image-slider">
+      <amp-carousel 
+        height="600"
+        type="carousel"
+        layout=fixed-height
+        id="screenshots-img">
+        <!-- <div class="image-slider"> -->
           <amp-img src="https://bootstrapmade.com/demo/themes/eStartup/img/screen/2.jpg"
             width="350"
             height="600" layout="intrinsic"></amp-img>
@@ -1206,8 +1198,8 @@
             height="600"
             layout="intrinsic"></amp-img>
 
-        </div>
-      <!-- </amp-carousel> -->
+        <!-- </div> -->
+      </amp-carousel>
     </section>
     <section id="video">
       <div >
