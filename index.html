@@ -133,28 +133,32 @@
       /* Navbar */
       .header {
         display: flex;
-        justify-content: flex-start;
-        top: 0;
-        left: 0;
-        right: 0;
-        box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
+        background: white;
+        border-bottom: 2px double #DDDAD4;
+        z-index: 10;
+        width: 100%;
+        height: 7vh;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
         position: fixed;
         background: white;
         z-index: 999;
-        /* padding: 0 4% 0 2%; */
+      }
+      .nav-left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 5%;
       }
       .trigger {
         line-height: 2;
         font-size: 30px;
         cursor: pointer;
-        padding-left: 4%;
+        padding-right: 5%;
         outline: none;
       }
       #logo {
-        top: 20px;
-        left: 0;
-        /* position: absolute; */
-        /* padding-top: 4%; */
         margin-right: auto;
       }
       #logo * {
@@ -195,22 +199,9 @@
         visibility: hidden;
         display: none;
       }
+      /* Nav-Desktop */
       @media only screen and (min-width: 1024px) {
-        .header {
-          background: white;
-          border-bottom: 2px double #DDDAD4;
-          width: 100%;
-          /* height: 7vh; */
-          /* display: flex;
-          flex-direction: row; */
-          /* align-items: center;
-          justify-content: center; */
-          z-index: 10;
-        }
         .nav-left {
-          display: flex;
-          justify-content: center;
-          align-items: center;
           padding-left: 15%;
         }
         #desktop-nav {
@@ -234,30 +225,9 @@
           text-decoration: none;
           transition: ease 0.5s;
         }
-        /* #desktop-nav {
-          visibility: visible;
-          display: flex;
+        ol a:hover {
+          color: #71c55d;;
         }
-        #desktop-nav ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-        }
-        #desktop-nav ul li {
-          float: left;
-        }
-        #desktop-nav li a {
-          display: block;
-        }
-        #desktop-nav li a:hover {
-          color: #71c55d; 
-        } */
-
-        /* .header {
-          width: 100%;
-          flex-direction: row;
-        } */
         .open {
           visibility: hidden;
         }
