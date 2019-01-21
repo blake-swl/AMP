@@ -103,7 +103,7 @@
           flex-direction: column;
           align-items: center;
         }
-        #intro.section-container, #about, #features.section-container, #screenshots.section-container, #pricing.section-container, #blog.section-container {
+        #intro.section-container, #about, #features.section-container, #screenshots.section-container, #testimonial-container.section-container, #pricing.section-container, #blog.section-container {
           width: 70vw;
         }
         #video {
@@ -563,23 +563,29 @@
         font-weight: 800;
         padding: 2% 0 5% 0;
       }
-      .testimonial-carousel {
-        margin-top: 30%;
+      /* #testimonial-container {
+        width: 60%;
+      } */
+      #testimonial {
+        margin-top: 10%;
+        width: 90%;
         box-shadow: 0 8px 10px #eaebed, 0 -1px 10px #eaebed;
-        /* display: flex;
-        flex-direction: column;
-        align-items: center; */
       }
       .testimonial {
-        width: 100%;
         display: flex;
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+        padding: 2% 4%;
       }
-      .testimonial-title {
-        font-size: 45px;
-        font-weight: 100;
-        font-family: 'Roboto', sans-serif;
+      #testimonial .title {
+        padding-top: 10%;
+      }
+      #testimonial .separator {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+      } 
+      .testimonial-name {
+        padding-top: 4%;
       }
 
       /* Tablet to Small Laptop */
@@ -594,6 +600,9 @@
         .team-item:hover .slide {
           transform: translate3d(0px, -150px, 0px);
         }
+        #testimonial {
+          width: 60%
+        }
       }
       @media only screen and (min-width: 1024px) {
         .team-item {
@@ -602,6 +611,9 @@
         }
         .team-item:hover .slide {
           transform: translate3d(0px, -105px, 0px);
+        }
+        #testimonial {
+          width: 60%
         }
       }
       @media only screen and (min-width: 1080px) {
@@ -615,7 +627,9 @@
         .team-item:hover .slide {
           transform: translate3d(0px, -105px, 0px);
         }
-
+        #testimonial {
+          width: 60%
+        }
       }
       /* Pricing */
 
@@ -931,11 +945,11 @@
       <nav id="desktop-nav">
         <ol class="list-reset center m0 p0 flex justify-center nowrap">
           <li class="ampstart-nav-item "><a href="#" class="text-decoration-none block">Home</a></li>
-          <li class="ampstart-nav-item"><a href="#">About</a></li>
-          <li class="ampstart-nav-item"><a href="#">Features</a></li>
-          <li class="ampstart-nav-item"><a href="#">Screenshots</a></li>
-          <li class="ampstart-nav-item"><a href="#">Team</a></li>  
-          <li class="ampstart-nav-item"><a href="#">Pricing</a></li>
+          <li class="ampstart-nav-item"><a href="#about">About</a></li>
+          <li class="ampstart-nav-item"><a href="#features">Features</a></li>
+          <li class="ampstart-nav-item"><a href="#screenshots">Screenshots</a></li>
+          <li class="ampstart-nav-item"><a href="#team">Team</a></li>  
+          <li class="ampstart-nav-item"><a href="#pricing">Pricing</a></li>
           <li class="ampstart-nav-item ampstart-nav-dropdown relative">            
             <!-- <amp-accordion layout="container" disable-session-states="">
               <section>
@@ -950,28 +964,28 @@
                 </section>
             </amp-accordion> -->
             </li>
-          <li class="ampstart-nav-item ">
-            <a href="#" class="text-decoration-none block">Blog</a>
+          <li>
+            <a href="#blog">Blog</a>
           </li>
-          <li class="ampstart-nav-item ">
-            <a href="#" class="text-decoration-none block">Contact</a>
+          <li>
+            <a href="#contact">Contact</a>
           </li>
         </ol>
       </nav>
     </header>
     
     <amp-sidebar id="navbar" layout="nodisplay">
-      <div class="flex justify-start items-center ampstart-sidebar-header">
+      <div>
         <div role="button" on="tap:navbar.toggle" tabindex="0" class="trigger close" style="color: white;">✕</div>
       </div>
       <nav class="sidebar-nav">
         <ul class="nav-item">
           <li class="ampstart-nav-item"><a href="#">Home</a></li>
-          <li class="ampstart-nav-item"><a href="#">About</a></li>
-          <li class="ampstart-nav-item"><a href="#">Features</a></li>
-          <li class="ampstart-nav-item"><a href="#">Screenshots</a></li>
-          <li class="ampstart-nav-item"><a href="#">Team</a></li>  
-          <li class="ampstart-nav-item"><a href="#">Pricing</a></li>
+          <li class="ampstart-nav-item"><a href="#about">About</a></li>
+          <li class="ampstart-nav-item"><a href="#features">Features</a></li>
+          <li class="ampstart-nav-item"><a href="#screenshots">Screenshots</a></li>
+          <li class="ampstart-nav-item"><a href="#team">Team</a></li>  
+          <li class="ampstart-nav-item"><a href="#pricing">Pricing</a></li>
           <li class="ampstart-nav-item">
             <!-- <amp-accordion layout="container" class="sidebar-dropdown" id="dropdown">
               <section>
@@ -986,8 +1000,8 @@
               </section>
             </amp-accordion> -->
           </li>
-          <li class="ampstart-nav-item"><a href="#">Blog</a></li>
-          <li class="ampstart-nav-item"><a href="#">Contact</a></li>
+          <li class="ampstart-nav-item"><a href="#blog">Blog</a></li>
+          <li class="ampstart-nav-item"><a href="#contact">Contact</a></li>
         </ul>
       </nav>        
     </amp-sidebar>
@@ -1202,7 +1216,7 @@
       </amp-carousel>
     </section>
     <section id="video">
-      <div >
+      <div>
         <div class="playbtn">
             <svg on="tap:youtube"
             role="button"
@@ -1321,25 +1335,49 @@
           </div>
         </div>
       </div>
-      <div id="testimonial-container">
-        <amp-carousel width="320"
-          height="600" class="testimonial-carousel" layout="fixed">
+      <div id="testimonial" >
+        <amp-carousel height="500"
+          layout="fixed-height"
+          type="slides"
+          autoplay
+          delay="3000">
           <div class="testimonial">
-            <div class="testimonial-title">Our Users Speack Volumes Us</div>
-            <p class="testimonial-message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+            <div class="title">Our Users Speack Volumes Us</div>
+            <p class="separator">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
             <div class="testimonial-name">Kimberly Tran</div>
           </div>
           <div class="testimonial">
-            <div class="testimonial-title">Our Users Speack Volumes Us</div>
-            <p class="testimonial-message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+            <div class="title">Our Users Speack Volumes Us</div>
+            <p class="separator">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
             <div class="testimonial-name">Kimberly Tran</div>
           </div>
           <div class="testimonial">
-            <div class="testimonial-title">Our Users Speack Volumes Us</div>
-            <p class="testimonial-message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+            <div class="title">Our Users Speack Volumes Us</div>
+            <p class="separator">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
             <div class="testimonial-name">Kimberly Tran</div>
           </div>
         </amp-carousel>
+        <!-- <div class="testimonial-container"> -->
+          <!-- <amp-carousel 
+            height="300" class="testimonial-carousel" layout="fixed-height"
+            type=carousel>
+            <div class="testimonial">
+              <div class="testimonial-title">Our Users Speack Volumes Us</div>
+              <p class="testimonial-message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+              <div class="testimonial-name">Kimberly Tran</div>
+            </div>
+            <div class="testimonial">
+              <div class="testimonial-title">Our Users Speack Volumes Us</div>
+              <p class="testimonial-message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+              <div class="testimonial-name">Kimberly Tran</div>
+            </div>
+            <div class="testimonial">
+              <div class="testimonial-title">Our Users Speack Volumes Us</div>
+              <p class="testimonial-message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+              <div class="testimonial-name">Kimberly Tran</div>
+            </div>
+          </amp-carousel> -->
+        <!-- </div> -->
       </div>
     </section>
     <!-- Pricing -->
