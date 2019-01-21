@@ -219,14 +219,15 @@
           margin: 0;
           padding: 0;
         }
-        ol a {
+        ol div {
           color: #555;
           text-align: center;
           padding: 8px;
           text-decoration: none;
           transition: ease 0.5s;
+          outline: none;
         }
-        ol a:hover {
+        ol div:hover {
           color: #71c55d;;
         }
         .open {
@@ -397,7 +398,7 @@
 
       /* Features */
       #features {
-        padding: 0 2%;
+        padding: 4% 2%;
       }
 
       .feature-container {
@@ -972,14 +973,14 @@
       <div role="button" on="tap:navbar.toggle" tabindex="0" class="trigger open">☰</div>
       <nav class="desktop-nav">
         <ol>
-          <li><a href="#landing" on="tap:landing.scrollTo(duration=400)">Home</a></li>
-          <li><a href="#about" on="tap:about.scrollTo(duration=400)">About</a></li>
-          <li><a href="#features" on="tap:features.scrollTo(duration=400)">Features</a></li>
-          <li><a href="#screenshots" on="tap:screenshots.scrollTo(duration=400)">Screenshots</a></li>
-          <li><a href="#team" on="tap:team.scrollTo(duration=400)">Team</a></li>  
-          <li><a href="#pricing" on="tap:pricing.scrollTo(duration=400)">Pricing</a></li>
-          <li><a href="#blog" on="tap:blog.scrollTo(duration=400)">Blog</a></li>
-          <li><a href="#contact" on="tap:contact.scrollTo(duration=400)">Contact</a></li>
+          <li><div role=button tabindex="0" on="tap:landing.scrollTo(duration=500)">Home</div></li>
+          <li><div role=button tabindex="0" on="tap:about.scrollTo(duration=500)">About</div></li>
+          <li><div role=button tabindex="0" on="tap:features.scrollTo(duration=500)">Features</div></li>
+          <li><div role=button tabindex="0" on="tap:screenshots.scrollTo(duration=500)">Screenshots</div></li>
+          <li><div role=button tabindex="0" on="tap:team.scrollTo(duration=500)">Team</div></li>  
+          <li><div role=button tabindex="0" on="tap:pricing.scrollTo(duration=500)">Pricing</div></li>
+          <li><div role=button tabindex="0" on="tap:blog.scrollTo(duration=500)">Blog</div></li>
+          <li><div role=button tabindex="0" on="tap:contact.scrollTo(duration=500)">Contact</div></li>
         </ol>
       </nav>
     </header>                 
