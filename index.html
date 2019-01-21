@@ -23,6 +23,7 @@
         margin: 0px;
         padding: 0px;
         overflow-x: hidden; 
+        z-index: 0;
       }
       body * {
         font-family: "Helvetica Neue";
@@ -127,21 +128,88 @@
       }
      
       /* Navbar */
+      .header {
+        display: flex;
+        justify-content: flex-start;
+        top: 0;
+        left: 0;
+        right: 0;
+        box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
+        position: fixed;
+        background: white;
+        z-index: 999;
+        padding: 0 4% 0 2%;
+      }
+      .trigger {
+        line-height: 2;
+        font-size: 30px;
+        cursor: pointer;
+        padding-left: 4%;
+        outline: none;
+      }
+      #logo {
+        padding-top: 4%;
+        margin-right: auto;
+      }
       #logo * {
-        padding-left:2%;
-        margin-top: 5%;
         font-family: 'Philosopher', sans-serif;
         font-size: 28px;
         color: #555;
         position: fixed;
       }
       #logo span {
+        padding-left: 5%;
         color: #71c55d; 
       }
+      .nav-item {
+        height: 100vh;
+        width: 70vw;
+        background: #333;
+        padding: 10% 6%;
+        line-height: 3;
+        margin: 0;
+      }
+      .nav-item * {
+        color: white;
+        list-style: none;
+      }
+      .i-amphtml-accordion-header {
+        background: #333;
+        display: none;
+      }
+      /* #dropdown {
+        background: #333;
+        border: none;
+      } */
+      /* #navbar amp-accordion {
+      } */
+      /* .sidebar-dropdown {
+        background: #333;
+        color: white;
+      } */
+      #desktop-nav {
+        visibility: hidden;
+        display: none;
+      }
+      /* #logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        box-shadow: 2px 2px lightgray;
+        width: 100vw;
+        border-bottom: 2px solid lightgray;
+        background: white;
+        z-index: 10;
+      } */
+      /* padding-left:5%; */
+      /* margin-top: 5%; */
+      /* nav {
+        height: 5vh;
+      } */
       /* #navbar {
         height: 7vh;
       } */
-      #hamburger {
+      /* #hamburger {
         background: none;
         color: grey;
         outline: none;
@@ -150,14 +218,15 @@
         right: 2%;
         position: fixed;
         font-size: 30px;
-      }
-      #target-element {
+      } */
+      /* height: 7vh; */
+      /* #target-element {
         display: flex;
         flex-direction: row;
         position: fixed;
         width: 100%;
         justify-content: flex-end;
-        /* height: 7vh; */
+        border: 2px solid lightgrey;
         background: white;
       }
       #target-element * {
@@ -166,20 +235,9 @@
         text-decoration: none;
         font-size: 12px;
       }
-      .nav-item {
-        height: 100vh;
-        width: 60vw;
-        background: #333;
-        padding: 10% 6%;
-        line-height: 3;
-        margin: 0;
-      }
-      .nav-item * {
-        color: white;
-      }
       #target-element *:hover {
         color: #71c55d; 
-      }
+      } */
 
       /* Home */
 
@@ -861,6 +919,7 @@
     }
     </script>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async></script>
     <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
     <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
     <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
@@ -874,7 +933,34 @@
   <body>
         <!-- ToDO -->
         <!-- Navbar, Scroll, Testimonial, tablet padding -->
-    <amp-sidebar id="navbar" layout="nodisplay" side="left">
+        <!-- <div id="logo">
+          <span>e<a href="https://blakeswl.me" class="easter-egg">Startups</a></span>
+        </div> -->
+        <!-- <header>
+          <div role="button" on="tap:sidebar.toggle" tabindex="0" class="hamburger">☰</div>
+          <nav class="accordian-drop">
+            <ul>
+              <li>
+                <amp-accordion layout="container" disable-session-states="">
+                  <section>
+                    <header>Drop Down</header>
+                    <ul>
+                        <li>Drop Down 1</li>
+                        <li>Drop Down 2</li>
+                        <li>Drop Down 3</li>
+                        <li>Drop Down 4</li>
+                        <li>Drop Down 5</li>
+                    </ul>
+                  </section>
+                </amp-accordion>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <amp-sidebar id="header-sidebar" layout="nodisplay">
+          
+        </amp-sidebar> -->
+    <!-- <amp-sidebar id="navbar" layout="nodisplay" side="left">
       <ul class="nav-item" style="list-style: none">
         <li><a href="#landing">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -888,24 +974,93 @@
       </ul>
       <nav toolbar="(min-width: 760px)" toolbar-target="target-element">
         <ul>
-            <li><a href="#landing">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#screenshots">Screenshots</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li>Drop Down</li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <li><a href="#landing">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#screenshots">Screenshots</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li>Drop Down</li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </amp-sidebar>
-    <button on='tap:navbar' id="hamburger">☰</button>
     <div id="logo">
-      <a href="https://blakeswl.me" class="easter-egg"><span>e</span>Startups</a>
+      <span>e<a href="https://blakeswl.me" class="easter-egg">Startups</a></span>
     </div>
+      <button on='tap:navbar' id="hamburger">☰</button>
     <header id="target-element">
+    </header> -->
+    <!-- Start Navbar -->
+    <header class="header">
+      <div id="logo">
+        <span>e<a href="https://blakeswl.me" class="easter-egg">Startups</a></span>
+      </div>
+      <div role="button" on="tap:navbar.toggle" tabindex="0" class="trigger open">☰</div>
+      <!-- <nav id="desktop-nav">
+        <ul class="list-reset center m0 p0 flex justify-center nowrap">
+          <li class="ampstart-nav-item "><a href="#" class="text-decoration-none block">Home</a></li>
+          <li class="ampstart-nav-item"><a href="#">About</a></li>
+          <li class="ampstart-nav-item"><a href="#">Features</a></li>
+          <li class="ampstart-nav-item"><a href="#">Screenshots</a></li>
+          <li class="ampstart-nav-item"><a href="#">Team</a></li>  
+          <li class="ampstart-nav-item"><a href="#">Pricing</a></li>
+          <li class="ampstart-nav-item ampstart-nav-dropdown relative">            
+            <amp-accordion layout="container" disable-session-states="">
+              <section>
+                  <header>Drop Down</header>
+                  <ul class="ampstart-dropdown-items list-reset m0 p0">
+                      <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 1</a></li>
+                      <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 2</a></li>
+                      <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 3</a></li>
+                      <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 4</a></li>
+                      <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 5</a></li>
+                  </ul>
+                </section>
+            </amp-accordion>
+            </li>
+          <li class="ampstart-nav-item ">
+            <a href="#" class="text-decoration-none block">Blog</a>
+          </li>
+          <li class="ampstart-nav-item ">
+            <a href="#" class="text-decoration-none block">Contact</a>
+          </li>
+        </ul>
+      </nav> -->
     </header>
+    
+    <amp-sidebar id="navbar" layout="nodisplay">
+      <div class="flex justify-start items-center ampstart-sidebar-header">
+        <div role="button" on="tap:navbar.toggle" tabindex="0" class="trigger close">✕</div>
+      </div>
+      <nav class="sidebar-nav">
+        <ul class="nav-item">
+          <li class="ampstart-nav-item"><a href="#">Home</a></li>
+          <li class="ampstart-nav-item"><a href="#">About</a></li>
+          <li class="ampstart-nav-item"><a href="#">Features</a></li>
+          <li class="ampstart-nav-item"><a href="#">Screenshots</a></li>
+          <li class="ampstart-nav-item"><a href="#">Team</a></li>  
+          <li class="ampstart-nav-item"><a href="#">Pricing</a></li>
+          <li class="ampstart-nav-item">
+            <amp-accordion layout="container" class="sidebar-dropdown" id="dropdown">
+              <section>
+                <header>Drop Down</header>
+                <ul>
+                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 1</a></li>
+                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 2</a></li>
+                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 3</a></li>
+                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 4</a></li>
+                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 5</a></li>
+                </ul>
+              </section>
+            </amp-accordion>
+          </li>
+          <li class="ampstart-nav-item"><a href="#">Blog</a></li>
+          <li class="ampstart-nav-item"><a href="#">Contact</a></li>
+        </ul>
+      </nav>        
+    </amp-sidebar>
 
     <!-- Landing -->
     <div id="landing">
