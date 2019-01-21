@@ -10,8 +10,11 @@
     <link href="https://fonts.googleapis.com/css?family=Philosopher:700" rel="stylesheet">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />    <style amp-custom>
+/* 
+      * {
+        outline: 1px solid red;
+      } */
 
-      
       /* Global Styles */
       button, input {
         outline: none;
@@ -138,7 +141,7 @@
         position: fixed;
         background: white;
         z-index: 999;
-        padding: 0 4% 0 2%;
+        /* padding: 0 4% 0 2%; */
       }
       .trigger {
         line-height: 2;
@@ -148,7 +151,10 @@
         outline: none;
       }
       #logo {
-        padding-top: 4%;
+        top: 20px;
+        left: 0;
+        /* position: absolute; */
+        /* padding-top: 4%; */
         margin-right: auto;
       }
       #logo * {
@@ -156,6 +162,7 @@
         font-size: 28px;
         color: #555;
         position: fixed;
+        text-align: center;
       }
       #logo span {
         padding-left: 5%;
@@ -189,7 +196,45 @@
         display: none;
       }
       @media only screen and (min-width: 1024px) {
+        .header {
+          background: white;
+          border-bottom: 2px double #DDDAD4;
+          width: 100%;
+          /* height: 7vh; */
+          /* display: flex;
+          flex-direction: row; */
+          /* align-items: center;
+          justify-content: center; */
+          z-index: 10;
+        }
+        .nav-left {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-left: 15%;
+        }
         #desktop-nav {
+          padding-right: 15%;
+          visibility: visible;
+          display: flex;
+        }
+        ol {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        ol a {
+          color: #555;
+          text-align: center;
+          padding: 8px;
+          text-decoration: none;
+          transition: ease 0.5s;
+        }
+        /* #desktop-nav {
           visibility: visible;
           display: flex;
         }
@@ -204,15 +249,10 @@
         }
         #desktop-nav li a {
           display: block;
-          color: black;
-          text-align: center;
-          padding: 16px;
-          text-decoration: none;
-          transition: ease 0.5s;
         }
         #desktop-nav li a:hover {
           color: #71c55d; 
-        }
+        } */
 
         /* .header {
           width: 100%;
@@ -226,54 +266,6 @@
           display: none;
         }
       }
-      /* #logo {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        box-shadow: 2px 2px lightgray;
-        width: 100vw;
-        border-bottom: 2px solid lightgray;
-        background: white;
-        z-index: 10;
-      } */
-      /* padding-left:5%; */
-      /* margin-top: 5%; */
-      /* nav {
-        height: 5vh;
-      } */
-      /* #navbar {
-        height: 7vh;
-      } */
-      /* #hamburger {
-        background: none;
-        color: grey;
-        outline: none;
-        border: none;
-        top: 0;
-        right: 2%;
-        position: fixed;
-        font-size: 30px;
-      } */
-      /* height: 7vh; */
-      /* #target-element {
-        display: flex;
-        flex-direction: row;
-        position: fixed;
-        width: 100%;
-        justify-content: flex-end;
-        border: 2px solid lightgrey;
-        background: white;
-      }
-      #target-element * {
-        transition: ease 0.5s;
-        color: rgba(51,51,51,.5);
-        text-decoration: none;
-        font-size: 12px;
-      }
-      #target-element *:hover {
-        color: #71c55d; 
-      } */
-
       /* Home */
 
       #landing {
@@ -969,12 +961,12 @@
         <!-- ToDO -->
         <!-- Navbar, Scroll, Testimonial, tablet padding -->
     <header class="header">
-      <div id="logo">
+      <div id="logo" class="nav-left">
         <span>e<a href="https://blakeswl.me" class="easter-egg">Startups</a></span>
       </div>
       <div role="button" on="tap:navbar.toggle" tabindex="0" class="trigger open">☰</div>
       <nav id="desktop-nav">
-        <ul class="list-reset center m0 p0 flex justify-center nowrap">
+        <ol class="list-reset center m0 p0 flex justify-center nowrap">
           <li class="ampstart-nav-item "><a href="#" class="text-decoration-none block">Home</a></li>
           <li class="ampstart-nav-item"><a href="#">About</a></li>
           <li class="ampstart-nav-item"><a href="#">Features</a></li>
@@ -1001,7 +993,7 @@
           <li class="ampstart-nav-item ">
             <a href="#" class="text-decoration-none block">Contact</a>
           </li>
-        </ul>
+        </ol>
       </nav>
     </header>
     
