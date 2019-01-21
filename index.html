@@ -204,7 +204,7 @@
         background: #333;
         color: white;
       } */
-      #desktop-nav {
+      .desktop-nav {
         visibility: hidden;
         display: none;
       }
@@ -216,7 +216,7 @@
         .nav-left {
           padding-left: 15%;
         }
-        #desktop-nav {
+        .desktop-nav {
           padding-right: 15%;
           visibility: visible;
           display: flex;
@@ -765,11 +765,6 @@
         flex-direction: column;
         padding: 10% 0;
       } 
-      /* .subscribe-container {
-        padding: 10% 0;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-      } */
       .subscribe-container input {
         border: 1px solid lightgray;
         text-align: center;
@@ -823,7 +818,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* width: 100%; */
         padding: 0 2%;
       }
       .send-email * {
@@ -849,11 +843,12 @@
         padding: 0 5%;
         font-size: 14px;
       }
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .subscribe-button {
+          margin-top: 0;
+        }
+      }
       @media only screen and (min-width: 1024px) {
-        /* .subscribe-overlay { */
-          /* justify-content: center; */
-          /* align-items: center; */
-        /* } */
         .subscribe-button {
           margin-top: 0;
         }
@@ -919,6 +914,30 @@
           grid-column-gap: 2%;
         }
       }
+      /* Scroll to Top */
+      .scrollToTop {
+        color: white;
+        font-size: 20px;
+        padding: 3px 6px;
+        border: none;
+        outline: none;
+        background: #74c362;
+        z-index: 9999;
+        bottom: 15px;
+        right: 15px;
+        position: fixed;
+        opacity: 0;
+        visibility: hidden;
+        cursor: pointer;
+      }
+      .target {
+        position: relative;
+      }
+      .target-anchor {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     </style>
     <script type="application/ld+json">
     {
@@ -944,41 +963,21 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
   <body>
-        <!-- ToDO -->
-        <!-- Navbar, Scroll, Testimonial, tablet padding -->
     <header class="header">
       <div id="logo" class="nav-left">
         <span>e<a href="https://blakeswl.me" class="easter-egg">Startups</a></span>
       </div>
       <div role="button" on="tap:navbar.toggle" tabindex="0" class="trigger open">☰</div>
-      <nav id="desktop-nav">
-        <ol class="list-reset center m0 p0 flex justify-center nowrap">
-          <li class="ampstart-nav-item "><a href="#" class="text-decoration-none block">Home</a></li>
-          <li class="ampstart-nav-item"><a href="#about">About</a></li>
-          <li class="ampstart-nav-item"><a href="#features">Features</a></li>
-          <li class="ampstart-nav-item"><a href="#screenshots">Screenshots</a></li>
-          <li class="ampstart-nav-item"><a href="#team">Team</a></li>  
-          <li class="ampstart-nav-item"><a href="#pricing">Pricing</a></li>
-          <li class="ampstart-nav-item ampstart-nav-dropdown relative">            
-            <!-- <amp-accordion layout="container" disable-session-states="">
-              <section>
-                  <header>Drop Down</header>
-                  <ul class="ampstart-dropdown-items list-reset m0 p0">
-                      <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 1</a></li>
-                      <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 2</a></li>
-                      <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 3</a></li>
-                      <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 4</a></li>
-                      <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 5</a></li>
-                  </ul>
-                </section>
-            </amp-accordion> -->
-            </li>
-          <li>
-            <a href="#blog">Blog</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+      <nav class="desktop-nav">
+        <ol>
+          <li class="ampstart-nav-item "><a href="#" on="tap:top.scrollTo(duration=200)">Home</a></li>
+          <li class="ampstart-nav-item"><a href="#about" on="tap:about.scrollTo(duration=200)">About</a></li>
+          <li class="ampstart-nav-item"><a href="#features" on="tap:features.scrollTo(duration=200)">Features</a></li>
+          <li class="ampstart-nav-item"><a href="#screenshots" on="tap:screenshots.scrollTo(duration=200)">Screenshots</a></li>
+          <li class="ampstart-nav-item"><a href="#team" on="tap:team.scrollTo(duration=400)">Team</a></li>  
+          <li class="ampstart-nav-item"><a href="#pricing" on="tap:pricing.scrollTo(duration=400)">Pricing</a></li>
+          <li class="ampstart-nav-item"><a href="#blog" on="tap:blog.scrollTo(duration=400)">Blog</a></li>
+          <li class="ampstart-nav-item"><a href="#contact" on="tap:contact.scrollTo(duration=400)">Contact</a></li>
         </ol>
       </nav>
     </header>
@@ -988,33 +987,18 @@
         <div role="button" on="tap:navbar.toggle" tabindex="0" class="trigger close" style="color: white;">✕</div>
       </div>
       <nav class="sidebar-nav">
-        <ul class="nav-item">
-          <li class="ampstart-nav-item"><a href="#">Home</a></li>
-          <li class="ampstart-nav-item"><a href="#about">About</a></li>
-          <li class="ampstart-nav-item"><a href="#features">Features</a></li>
-          <li class="ampstart-nav-item"><a href="#screenshots">Screenshots</a></li>
-          <li class="ampstart-nav-item"><a href="#team">Team</a></li>  
-          <li class="ampstart-nav-item"><a href="#pricing">Pricing</a></li>
-          <li class="ampstart-nav-item">
-            <!-- <amp-accordion layout="container" class="sidebar-dropdown" id="dropdown">
-              <section>
-                <header>Drop Down</header>
-                <ul>
-                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 1</a></li>
-                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 2</a></li>
-                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 3</a></li>
-                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 4</a></li>
-                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Drop Down 5</a></li>
-                </ul>
-              </section>
-            </amp-accordion> -->
-          </li>
-          <li class="ampstart-nav-item"><a href="#blog">Blog</a></li>
-          <li class="ampstart-nav-item"><a href="#contact">Contact</a></li>
-        </ul>
+        <ol class="nav-item">
+          <li class="ampstart-nav-item "><a href="#" on="tap:top.scrollTo(duration=400)">Home</a></li>
+          <li class="ampstart-nav-item"><a href="#about" on="tap:about.scrollTo(duration=400)">About</a></li>
+          <li class="ampstart-nav-item"><a href="#features" on="tap:features.scrollTo(duration=400)">Features</a></li>
+          <li class="ampstart-nav-item"><a href="#screenshots" on="tap:screenshots.scrollTo(duration=400)">Screenshots</a></li>
+          <li class="ampstart-nav-item"><a href="#team" on="tap:team.scrollTo(duration=400)">Team</a></li>  
+          <li class="ampstart-nav-item"><a href="#pricing" on="tap:pricing.scrollTo(duration=400)">Pricing</a></li>
+          <li class="ampstart-nav-item"><a href="#blog" on="tap:blog.scrollTo(duration=400)">Blog</a></li>
+          <li class="ampstart-nav-item"><a href="#contact" on="tap:contact.scrollTo(duration=400)">Contact</a></li>
+        </ol>
       </nav>        
-    </amp-sidebar>
-
+    </amp-sidebar>                 
     <!-- Landing -->
     <div id="landing">
         <h3 class="target">
@@ -1063,6 +1047,9 @@
           }
         </script>
       </amp-animation>
+      <button id="scrollToTopButton"
+      on="tap:top.scrollTo(duration=200)"
+      class="scrollToTop">⌃</button>
       <div class="landing-container">
         <h1 style="font-family: 'Philosopher', sans-serif; color:#74c362; text-align: center;">Welcome to eStartups</h1>
         <h2 style="font-family: sans-serif; font-size: 1.2em; line-height: 24px; font-weight: 300; color: #555">Elegant Bootstrap Template for Startups, Apps, & more...</h2>
